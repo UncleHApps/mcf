@@ -23,15 +23,15 @@
       "@graph": [{"@type":"Corporation","name":"Maschem Freight","url":"https://www.masfreight.co.za","logo":"https://www.masfreight.co.za/images/logo.png","description":"Stop paying the 'Hazchem Premium.' We offer specialist FTL cross-border transport for hazchem and general cargo from South Africa to Zimbabwe, Zambia, and Malawi.","foundingDate":"1991","slogan":"Stop Paying the ‘Hazchem Premium.’ A Fair Rate, Delivered.","contactPoint":[{"@type":"ContactPoint","telephone":"+27-82-888-6504","contactType":"customer support","areaServed":["ZA","ZW","ZM","MW"],"availableLanguage":["en"]}],"department":[{"@type":"Organization","name":"Maschem Freight - Johannesburg HQ","telephone":"+27-11-974-9222","email":"mkuguyo@masfreight.co.za","address":{"@type":"PostalAddress","streetAddress":"183 Leith Rd, Bartlett, Boksburg","addressLocality":"Isando","addressRegion":"Gauteng","postalCode":"1459","addressCountry":"ZA"}},{"@type":"Organization","name":"Maschem Freight - Harare Operations","telephone":"+26-347-56-026","email":"cnyamayaro@masfreight.co.za","address":{"@type":"PostalAddress","streetAddress":"24 Conald Rd, Graniteside","addressLocality":"Harare","addressCountry":"ZW"}}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does cross border delivery take?","acceptedAnswer":{"@type":"Answer","text":"<p>From our Johannesburg depot to main centres, you can typically expect: Zim: 5-7 days, Zam: 7-9 days, Mal: 9-11 days. We confirm the ETA for your specific destination with your quote.</p>"}},{"@type":"Question","name":"What exactly is 'Full Truck Load' (FTL)?","acceptedAnswer":{"@type": "Answer","text": "<p>FTL means your cargo is the only cargo on the truck. No co-loading, ever. This ensures security and integrity. We handle 34-ton loads in 20ft/40ft containers, pallets, drums, bags, and more.</p>"}}]}]
     }
     </script>
-  <script type="module" crossorigin src="/assets/main-BIPvoHDS.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-CB4N403V.css">
+  <script type="module" crossorigin src="/assets/main-DNee7867.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-Ck235I8P.css">
 </head>
 <body class="font-body text-dark-grey antialiased" x-data>
 
     <!-- HEADER (Reusable Component) -->
     <header x-data="{ mobileMenuOpen: false }" @keydown.escape.window="mobileMenuOpen = false" class="bg-white shadow-md sticky top-0 z-40">
         <nav class="container flex justify-between items-center h-20">
-            <a href="index.html" class="font-sans text-2xl font-bold text-primary-blue">MAS<span class="text-secondary-orange">Chem</span>Freight</a>
+            <a href="/index.html" class="font-sans text-2xl font-bold text-primary-blue">MAS<span class="text-secondary-orange">Chem</span>Freight</a>
             <ul class="hidden lg:flex items-center space-x-8">
                 <li x-data="{ servicesMenuOpen: false }" @keydown.escape.window="servicesMenuOpen = false" @click.outside="servicesMenuOpen = false" class="relative">
                     <button type="button" @click="servicesMenuOpen = !servicesMenuOpen" class="font-sans font-semibold text-primary-blue hover:text-secondary-orange flex items-center gap-1 transition-colors">
@@ -39,23 +39,23 @@
                     </button>
                     <div x-show="servicesMenuOpen" x-transition class="absolute right-0 top-full mt-3 w-[48rem]" x-cloak>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 bg-white rounded-lg shadow-xl ring-1 ring-black ring-opacity-5">
-                            <a href="./mining-industrial-chemical-transport.html" class="group flex items-start gap-4 p-4 rounded-lg hover:bg-light-grey transition-colors">
+                            <a href="/mining-industrial-chemical-transport.html" class="group flex items-start gap-4 p-4 rounded-lg hover:bg-light-grey transition-colors">
                                 <i class="fas fa-industry fa-fw text-secondary-orange text-xl mt-1"></i>
                                 <div><h4 class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Mining & Industrial</h4><p class="text-sm text-gray-500">Compliant logistics for high-value mining chemicals.</p></div>
                             </a>
-                            <a href="./agricultural-farming-logistics.html" class="group flex items-start gap-4 p-4 rounded-lg hover:bg-light-grey transition-colors">
+                            <a href="/agricultural-farming-logistics.html" class="group flex items-start gap-4 p-4 rounded-lg hover:bg-light-grey transition-colors">
                                 <i class="fas fa-leaf fa-fw text-secondary-orange text-xl mt-1"></i>
                                 <div><h4 class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Agriculture & Farming</h4><p class="text-sm text-gray-500">Reliable transport for chemicals and time-sensitive produce.</p></div>
                             </a>
-                            <a href="./construction-manufacturing-freight.html" class="group flex items-start gap-4 p-4 rounded-lg hover:bg-light-grey transition-colors">
+                            <a href="/construction-manufacturing-freight.html" class="group flex items-start gap-4 p-4 rounded-lg hover:bg-light-grey transition-colors">
                                 <i class="fas fa-hard-hat fa-fw text-secondary-orange text-xl mt-1"></i>
                                 <div><h4 class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Construction & Mfg.</h4><p class="text-sm text-gray-500">On-time freight for building materials and project cargo.</p></div>
                             </a>
                         </div>
                     </div>
                 </li>
-                <li><a href="#about" class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">Our Promise</a></li>
-                <li><a href="#faq" class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">FAQ</a></li>
+                <li><a href="/index.html#about" class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">Our Promise</a></li>
+                <li><a href="/index.html#faq" class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">FAQ</a></li>
                 <li class="hidden md:block"><button @click="$store.modal.open()" class="bg-secondary-orange text-white font-sans font-bold py-2 px-5 rounded-md hover:bg-orange-600 transition-transform hover:scale-105">Get My Fair Rate</button></li>
             </ul>
             <div class="lg:hidden">
@@ -64,11 +64,11 @@
         </nav>
         <div x-show="mobileMenuOpen" class="lg:hidden" x-cloak>
              <div class="p-4 space-y-2">
-                <a href="./mining-industrial-chemical-transport.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Mining & Industrial</a>
-                <a href="./agricultural-farming-logistics.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Agriculture & Farming</a>
-                <a href="./construction-manufacturing-freight.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Construction & Manufacturing</a>
-                <a href="#about" @click="mobileMenuOpen = false" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Our Promise</a>
-                <a href="#faq" @click="mobileMenuOpen = false" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">FAQ</a>
+                <a href="/mining-industrial-chemical-transport.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Mining & Industrial</a>
+                <a href="/agricultural-farming-logistics.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Agriculture & Farming</a>
+                <a href="/construction-manufacturing-freight.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Construction & Manufacturing</a>
+                <a href="/index.html#about" @click="mobileMenuOpen = false" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Our Promise</a>
+                <a href="/index.html#faq" @click="mobileMenuOpen = false" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">FAQ</a>
                  <button @click="$store.modal.open(); mobileMenuOpen = false;" class="w-full mt-2 bg-secondary-orange text-white font-sans font-bold py-3 px-5 rounded-md">Get My Fair Rate</button>
             </div>
         </div>
@@ -186,7 +186,7 @@
                 <div class="text-left md:text-center">
                     <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue mb-12">Cross-Border Freight for Your Industry</h2>
                     <div class="grid md:grid-cols-3 gap-8">
-                        <a href="./mining-industrial-chemical-transport.html" class="group relative block h-80 rounded-lg shadow-lg overflow-hidden">
+                        <a href="/mining-industrial-chemical-transport.html" class="group relative block h-80 rounded-lg shadow-lg overflow-hidden">
                             <div class="absolute inset-0 bg-cover bg-center bg-mining-card transform group-hover:scale-110 transition-transform duration-500 ease-in-out"></div>
                             <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-70 transition-all duration-300"></div>
                             <div class="relative h-full flex flex-col justify-end p-6 text-white">
@@ -196,7 +196,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="./agricultural-farming-logistics.html" class="group relative block h-80 rounded-lg shadow-lg overflow-hidden">
+                        <a href="/agricultural-farming-logistics.html" class="group relative block h-80 rounded-lg shadow-lg overflow-hidden">
                             <div class="absolute inset-0 bg-cover bg-center bg-agri-card transform group-hover:scale-110 transition-transform duration-500 ease-in-out"></div>
                             <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-70 transition-all duration-300"></div>
                             <div class="relative h-full flex flex-col justify-end p-6 text-white">
@@ -206,7 +206,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="./construction-manufacturing-freight.html" class="group relative block h-80 rounded-lg shadow-lg overflow-hidden">
+                        <a href="/construction-manufacturing-freight.html" class="group relative block h-80 rounded-lg shadow-lg overflow-hidden">
                             <div class="absolute inset-0 bg-cover bg-center bg-construction-card transform group-hover:scale-110 transition-transform duration-500 ease-in-out"></div>
                             <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-70 transition-all duration-300"></div>
                             <div class="relative h-full flex flex-col justify-end p-6 text-white">
