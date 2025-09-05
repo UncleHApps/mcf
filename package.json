@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "npx vite build",
     "preview": "vite preview",
-    "deploy": "cross-env GH_TOKEN=$GH_TOKEN gh-pages -d dist -r https://$GH_TOKEN@github.com/unclehapps/mcf.git"
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
