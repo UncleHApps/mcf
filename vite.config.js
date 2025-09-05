@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: 'src', // Set the project root to the 'src' directory
+  root: 'mcf', // Set the project root to the 'src' directory
   build: {
     outDir: '../dist', // Output builds to a 'dist' directory at the project root
     emptyOutDir: true, // Clean the output directory on each build
