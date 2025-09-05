@@ -66,32 +66,7 @@
                  <button @click="$store.modal.open(); mobileMenuOpen = false;" class="w-full mt-2 bg-secondary-orange text-white font-sans font-bold py-3 px-5 rounded-md">Get My Fair Rate</button>
             </div>
         </div>
-        <ul class="hidden lg:flex items-center space-x-8">
-            <li x-data="{ servicesMenuOpen: false }" @keydown.escape.window="servicesMenuOpen = false" @click.outside="servicesMenuOpen = false" class="relative">
-                <button type="button" @click="servicesMenuOpen = !servicesMenuOpen" class="font-sans font-semibold text-primary-blue hover:text-secondary-orange flex items-center gap-1 transition-colors">
-                    Services <i class="fas fa-chevron-down fa-xs transition-transform duration-200" :class="{'rotate-180': servicesMenuOpen}"></i>
-                </button>
-                <div x-show="servicesMenuOpen" x-transition class="absolute right-0 top-full mt-3 w-[48rem]" x-cloak>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 bg-white rounded-lg shadow-xl ring-1 ring-black ring-opacity-5">
-                        <a href="./mining-industrial-chemical-transport.html" class="group flex items-start gap-4 p-4 rounded-lg hover:bg-light-grey transition-colors">
-                            <i class="fas fa-industry fa-fw text-secondary-orange text-xl mt-1"></i>
-                            <div><h4 class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Mining & Industrial</h4><p class="text-sm text-gray-500">Compliant logistics for high-value mining chemicals.</p></div>
-                        </a>
-                        <a href="./agricultural-farming-logistics.html" class="group flex items-start gap-4 p-4 rounded-lg hover:bg-light-grey transition-colors">
-                            <i class="fas fa-leaf fa-fw text-secondary-orange text-xl mt-1"></i>
-                            <div><h4 class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Agriculture & Farming</h4><p class="text-sm text-gray-500">Reliable transport for chemicals and time-sensitive produce.</p></div>
-                        </a>
-                        <a href="./construction-manufacturing-freight.html" class="group flex items-start gap-4 p-4 rounded-lg hover:bg-light-grey transition-colors">
-                            <i class="fas fa-hard-hat fa-fw text-secondary-orange text-xl mt-1"></i>
-                            <div><h4 class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Construction & Mfg.</h4><p class="text-sm text-gray-500">On-time freight for building materials and project cargo.</p></div>
-                        </a>
-                    </div>
-                </div>
-            </li>
-            <li><a href="index.html#about" class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">Our Promise</a></li>
-            <li><a href="index.html#faq" class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">FAQ</a></li>
-            <li class="hidden md:block"><button @click="$store.modal.open()" class="bg-secondary-orange text-white font-sans font-bold py-2 px-5 rounded-md hover:bg-orange-600 transition-transform hover:scale-105">Get My Fair Rate</button></li>
-        </ul>
+       
         <div class="lg:hidden">
             <button @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Open main menu"><i class="fas fa-bars text-2xl text-primary-blue"></i></button>
         </div>
