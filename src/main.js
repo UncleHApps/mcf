@@ -1,0 +1,1 @@
+console.log('--- main.js was loaded and executed ---');

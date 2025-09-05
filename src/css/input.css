@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* This ensures smooth scrolling for anchor links */
+  html {
+    @apply scroll-smooth;
+  }
+  
+  /* Applies a default transition to all elements for smoother interactions */
+  * {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  /* A reusable container component for consistent page width */
+  .container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  /* Custom utility classes for the industry card background images */
+  .bg-mining-card {
+    background-image: url('../images/Mining-Card.webp');
+  }
+  .bg-agri-card {
+    background-image: url('../images/Agri-Card.webp');
+  }
+  .bg-construction-card {
+    background-image: url('../images/Construction-Card.webp');
+  }
+}
