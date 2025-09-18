@@ -98,4 +98,7 @@ button:focus-visible {
 #hero {
   min-height: 80vh;
   height: 80vh;
+  align-items: left;
+  display: flex;
+  flex-direction: column;
 }
