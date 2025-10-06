@@ -1,19 +1,19 @@
 import { defineConfig } from 'vite';
 
-// This configuration is specifically for deploying to GitHub Pages.
+// This is the final, definitive configuration for a custom domain deployment.
 export default defineConfig({
-  // IMPORTANT: Replace 'YOUR_REPOSITORY_NAME' with the actual name of your GitHub repository.
-  // For example, if your repo URL is github.com/your-name/maschem-quote, this should be '/maschem-quote/'
-  base: '/',
+  base: '/', 
 
-  // --- Server Configuration for Local Development ---
   server: {
-    https: true,
+    https: false, 
     host: true,
   },
 
   // --- Core Project Configuration ---
   root: 'src',
+  // THE FIX IS HERE:
+  // This tells both the dev server AND the build process to look one
+  // directory up from 'src' to find the .env file.
   envDir: '..',
 
   // --- Build Process Configuration ---
@@ -24,7 +24,14 @@ export default defineConfig({
       input: {
         main: 'src/index.html',
         quote: 'src/quote-refinement.html',
-        // Add other pages here if they are not linked from index.html
+        agricultural: 'src/agricultural-farming-logistics.html',
+        construction: 'src/construction-manufacturing-freight.html',
+        malawi: 'src/cross-border-freight-malawi.html',
+        zambia: 'src/cross-border-freight-zambia.html',
+        zimbabwe: 'src/cross-border-freight-zimbabwe.html',
+        hazchem: 'src/dedicated-hazchem-freight.html',
+        general: 'src/general-cargo-ftl-freight.html',
+        mining: 'src/mining-industrial-chemical-transport.html'
       }
     }
   }
