@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
+    "./index.html",
+    "./*.html", // This is crucial for scanning your new country pages
     "./src/**/*.{html,js}",
   ],
   theme: {
@@ -20,12 +22,21 @@ export default {
         sans: ['Montserrat', 'sans-serif'],
         body: ['Open Sans', 'sans-serif'],
       },
-      container: {
-        center: true,
-        padding: '1rem',
-        screens: {
-          'lg': '1140px',
-        },
+      backgroundImage: {
+        // Card Images (Moved from input.css)
+        'mining-card': "url('/images/Mining-Card.webp')",
+        'agri-card': "url('/images/Agri-Card.webp')",
+        'construction-card': "url('/images/Construction-Card.webp')",
+
+        // Hero Images (Consolidated)
+        'mining-hero': "url('/images/mining-hero.webp')",
+        'agri-hero': "url('/images/agri-hero.webp')",
+        'construction-hero': "url('/images/construction-hero.webp')",
+        'zimbabwe-hero': "url('/images/zimbabwe-hero.webp')",
+        'zambia-hero': "url('/images/zambia-hero.webp')",
+        'malawi-hero': "url('/images/malawi-hero.webp')",
+        'hazchem-hero': "url('/images/hazchem-hero.webp')",
+        'general-cargo-hero': "url('/images/general-cargo-hero.webp')",
       },
     },
   },
