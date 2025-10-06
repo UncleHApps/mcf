@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   // IMPORTANT: Replace 'YOUR_REPOSITORY_NAME' with the actual name of your GitHub repository.
   // For example, if your repo URL is github.com/your-name/maschem-quote, this should be '/maschem-quote/'
-  base: '/mcf/',
+  base: '/',
 
   // --- Server Configuration for Local Development ---
   server: {
