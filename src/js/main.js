@@ -32,9 +32,8 @@ const countries = [
     { name: "United Arab Emirates", dial_code: "+971", code: "AE", flag: "🇦🇪" }, { name: "United Kingdom", dial_code: "+44", code: "GB", flag: "🇬🇧" }, { name: "United States", dial_code: "+1", code: "US", flag: "🇺🇸" }
 ];
 
-// --- v33.0: GLOBAL CALLBACK FOR GOOGLE MAPS SCRIPT ---
+// --- GLOBAL CALLBACK FOR GOOGLE MAPS SCRIPT ---
 window.initMap = function() {
-    console.log("Google Maps JS API loaded successfully.");
     // This function must exist in the global scope for the script callback to work.
 };
 
@@ -125,23 +124,16 @@ document.addEventListener('alpine:init', () => {
         isToday(day) { const today = new Date(); const d = new Date(this.year, this.month, day); return today.toDateString() === d.toDateString(); }
     }));
     
-    // --- v33.0 MIGRATED GOOGLE ADDRESS COMPONENT ---
     Alpine.data('googleAddressInput', (dispatch, fieldName) => ({
         mode: 'search',
         init() {
-            this.$watch('$store.quoteForm.dataLoaded', (isLoaded) => {
-                if(isLoaded && this.$store.quoteForm.quoteData[fieldName]) {
-                    this.mode = 'manual';
-                }
-            });
+            this.$watch('$store.quoteForm.dataLoaded', (isLoaded) => { if(isLoaded && this.$store.quoteForm.quoteData[fieldName]) { this.mode = 'manual'; } });
             this.$nextTick(() => {
                 const autocompleteElement = this.$refs.autocompleteInput;
                 if (autocompleteElement) {
                     autocompleteElement.addEventListener('gmp-placechange', (event) => {
                         const place = event.target.place;
-                        if (place && place.formattedAddress) {
-                            dispatch('address-updated', { field: fieldName, value: place.formattedAddress });
-                        }
+                        if (place && place.formattedAddress) { dispatch('address-updated', { field: fieldName, value: place.formattedAddress }); }
                     });
                 }
             });
@@ -184,15 +176,8 @@ document.addEventListener('alpine:init', () => {
             this.$watch('$store.quoteForm.quoteData.is_multipoint', (newValue) => { if (newValue === 'No') { this.$store.quoteForm.quoteData.delivery_address_2 = ''; this.$store.quoteForm.quoteData.delivery_address_3 = ''; } else { if (['Harare', 'Bulawayo', 'Lusaka', 'Kitwe', 'Lilongwe', 'Blantyre', 'Other'].includes(this.$store.quoteForm.quoteData.delivery_address_1)) { this.$store.quoteForm.quoteData.delivery_address_1 = ''; } this.$store.quoteForm.quoteData.delivery_address_1_other = ''; }});
             this.$watch('$store.quoteForm.quoteData.cell_local_number', (newValue) => { if (!newValue) { this.$store.quoteForm.quoteData.notification_preference = 'Email Only'; }});
             
-            // --- v33.0 UPDATED GOOGLE SCRIPT LOADER ---
             const googleMapsKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-            if (googleMapsKey && !window.google) {
-                const script = document.createElement('script');
-                script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsKey}&libraries=places,core&callback=initMap`;
-                script.async = true;
-                script.defer = true;
-                document.head.appendChild(script);
-            }
+            if (googleMapsKey && !window.google) { const script = document.createElement('script'); script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsKey}&libraries=places,core&callback=initMap`; script.async = true; script.defer = true; document.head.appendChild(script); }
         },
 
         initializeForm(fromSaved = false) {
@@ -243,11 +228,7 @@ document.addEventListener('alpine:init', () => {
         prevStep() { if (this.step > 1) this.step--; },
         
         _createFullPayload() { const data = this.$store.quoteForm.quoteData; return { timestamp: new Date().toISOString(), initial_name: data.name, initial_email: data.email, initial_country: data.initial_country, quote_id: data.quote_id, quote_reference_name: data.quote_reference_name, is_hazardous: data.is_hazardous, delivery_deadline_date: data.delivery_deadline_date, is_multipoint: data.is_multipoint, tonnage_kg: data.tonnage_kg, number_of_items: data.number_of_items, total_volume: data.total_volume, company_name: data.company_name, product_description: data.product_description, collection_address: data.collection_address, delivery_address_1: data.delivery_address_1, delivery_address_1_other: data.delivery_address_1_other, delivery_address_2: data.delivery_address_2, delivery_address_3: data.delivery_address_3, contact_email: data.email, secondary_email: data.secondary_email, full_landline: data.landline_local_number ? `${data.landline_country_code}${data.landline_local_number.replace(/\s/g, '')}` : '', full_cell: data.cell_local_number ? `${data.cell_country_code}${data.cell_local_number.replace(/\s/g, '')}` : '', notification_preference: data.notification_preference }; },
-        async _sendWebhook(payload) {
-            const webhookUrl = import.meta.env.VITE_MAKE_WEBHOOK_URL;
-            if (!webhookUrl) { console.error("Webhook URL is not configured."); alert("Endpoint is not configured."); return false; }
-            try { const response = await fetch(webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }); if (!response.ok) { console.error("Webhook call failed:", response.statusText); alert("There was an error saving your progress. Please try again."); return false; } return true; } catch (error) { console.error("Fetch error:", error); alert("A network error occurred. Please check your connection and try again."); return false; }
-        },
+        async _sendWebhook(payload) { const webhookUrl = import.meta.env.VITE_MAKE_WEBHOOK_URL; if (!webhookUrl) { console.error("Webhook URL is not configured."); alert("Endpoint is not configured."); return false; } try { const response = await fetch(webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }); if (!response.ok) { console.error("Webhook call failed:", response.statusText); alert("There was an error saving your progress. Please try again."); return false; } return true; } catch (error) { console.error("Fetch error:", error); alert("A network error occurred. Please check your connection and try again."); return false; }},
         async saveForLater() { this.isSaving = true; const stateToShare = { quoteData: this.$store.quoteForm.quoteData }; const resumeUrl = `${window.location.origin}/quote-refinement.html?data=${btoa(JSON.stringify(stateToShare))}`; const payload = { action: 'save_for_later', resume_url: resumeUrl, ...this._createFullPayload() }; if (await this._sendWebhook(payload)) { this.showSaveSuccessModal = true; } this.isSaving = false; },
         async sendInviteAndSave() { this.isSendingInvite = true; const stateToShare = { quoteData: this.$store.quoteForm.quoteData }; const resumeUrl = `${window.location.origin}/quote-refinement.html?data=${btoa(JSON.stringify(stateToShare))}`; const payload = { action: 'send_collaboration_invite', resume_url: resumeUrl, requester_name: this.$store.quoteForm.quoteData.name || 'A colleague', collaborator_email: this.collaboratorEmail, ...this._createFullPayload() }; if (await this._sendWebhook(payload)) { this.showCollaborationModal = false; this.showSaveSuccessModal = true; } this.isSendingInvite = false; },
         async submitQuote() { this.isSaving = true; const finalPayload = { action: 'submit_completed_quote', completion_timestamp: new Date().toISOString(), ...this._createFullPayload() }; if (await this._sendWebhook(finalPayload)) { this.formPhase = 'success'; localStorage.removeItem('maschemQuoteInProgress'); } this.isSaving = false; },

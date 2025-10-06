@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === v31.0 DEFINITIVE STYLESHEET === */
+/* === v34.0 DEFINITIVE STYLESHEET === */
 
 
 /* --- FLOATING LABEL & INPUT SYSTEM --- */
@@ -16,9 +16,6 @@
 /* Read-Only Field */
 .form-read-only {
     @apply block w-full px-3 pt-5 pb-2 text-base text-gray-700 bg-gray-100 rounded-md border-2 border-gray-200 cursor-not-allowed;
-}
-.form-label-read-only {
-    @apply absolute text-xs font-bold text-gray-500 top-2 left-3;
 }
 
 
@@ -65,8 +62,7 @@
 .summary-heading { @apply font-sans font-bold text-primary-blue text-base; }
 .btn-edit-summary { @apply flex items-center gap-1.5 text-xs font-bold text-primary-blue bg-blue-50 px-2 py-1 rounded-md transition-colors hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-300; }
 
-/* v31.0 SMOOTH MOBILE ACCORDION */
-.mobile-summary-toggle { @apply lg:hidden w-full text-left p-4 mb-6 bg-light-grey border border-gray-300 rounded-lg text-primary-blue font-bold flex justify-between items-center; }
+.mobile-summary-toggle { @apply lg:hidden w-full text-left p-4 bg-light-grey border border-gray-300 rounded-lg text-primary-blue font-bold flex justify-between items-center; }
 .mobile-summary-content { @apply lg:hidden overflow-hidden transition-all duration-500 ease-in-out max-h-0; }
 
 
@@ -76,7 +72,7 @@
 .welcome-mat-subheadline { @apply mt-4 text-lg text-gray-600 max-w-3xl mx-auto; }
 
 
-/* --- v31.0 RESPONSIVE PROGRESS BAR --- */
+/* --- RESPONSIVE PROGRESS BAR --- */
 
 /* MOBILE "THREE-SLOT VIEW" */
 .mobile-progress-bar { @apply flex lg:hidden justify-between items-start w-full max-w-md mx-auto h-24 mb-12; }
@@ -90,6 +86,11 @@
 
 .mobile-progress-slot.side .step-icon { @apply w-12 h-12 text-xl border-2 bg-white border-primary-blue text-primary-blue; }
 .mobile-progress-slot.side .step-title { @apply font-semibold text-primary-blue; }
+
+/* v34.0: NEW "READY" STATE FOR MOBILE */
+.mobile-progress-slot.ready .step-icon { @apply bg-green-500 border-green-500 text-white ring-4 ring-green-200; }
+.mobile-progress-slot.ready .step-title { @apply font-bold text-green-500; }
+
 
 /* DESKTOP "FULL VIEW" */
 .desktop-progress-bar { @apply hidden lg:flex items-start w-full mb-12; }
@@ -111,3 +112,8 @@
 .desktop-progress-step.pending .step-icon { @apply bg-white border-gray-300 text-gray-400; }
 .desktop-progress-step.pending .step-title { @apply text-gray-500; }
 .desktop-progress-step.pending .step-line { @apply bg-gray-300; }
+
+/* v34.0: NEW "READY" STATE FOR DESKTOP */
+.desktop-progress-step.ready .step-icon { @apply bg-green-500 border-green-500 text-white; }
+.desktop-progress-step.ready .step-title { @apply text-green-500 font-bold; }
+.desktop-progress-step.ready .step-line { @apply bg-green-500; }
