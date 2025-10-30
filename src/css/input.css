@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === v34.0 DEFINITIVE STYLESHEET === */
+/* === v38.0 DEFINITIVE STYLESHEET === */
 
 
 /* --- FLOATING LABEL & INPUT SYSTEM --- */
@@ -12,8 +12,6 @@
 .form-label-live {
     @apply absolute text-base text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-primary-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-[1.6rem] peer-focus:top-4 peer-focus:scale-75 peer-focus:-translate-y-4 left-1;
 }
-
-/* Read-Only Field */
 .form-read-only {
     @apply block w-full px-3 pt-5 pb-2 text-base text-gray-700 bg-gray-100 rounded-md border-2 border-gray-200 cursor-not-allowed;
 }
@@ -23,6 +21,10 @@
 .btn-primary { @apply bg-secondary-orange text-white font-sans font-bold py-3 px-8 rounded-md text-lg transition-transform hover:scale-105 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:scale-100 focus:outline-none focus:ring-4 focus:ring-orange-300; }
 .btn-secondary { @apply text-primary-blue font-bold py-3 px-6 rounded-md border-2 border-primary-blue bg-white hover:bg-light-grey transition-colors focus:outline-none focus:ring-4 focus:ring-blue-300; }
 .btn-tertiary { @apply text-primary-blue font-semibold hover:underline disabled:text-gray-400 disabled:no-underline disabled:cursor-not-allowed; }
+.btn-add-delivery { @apply w-full text-left text-primary-blue font-bold p-3 rounded-md border-2 border-dashed border-gray-400 bg-white hover:bg-light-grey hover:border-primary-blue transition-colors focus:outline-none focus:ring-4 focus:ring-blue-300 flex items-center gap-3; }
+.btn-remove-delivery { @apply text-gray-400 hover:text-red-500 transition-colors focus:outline-none focus:ring-2 focus:ring-red-300 rounded-full w-8 h-8 flex items-center justify-center; }
+/* NEW v38.0 SUCCESS BUTTON */
+.btn-success { @apply bg-green-600 text-white font-sans font-bold py-3 px-8 rounded-md text-lg transition-transform hover:scale-105 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:scale-100 focus:outline-none focus:ring-4 focus:ring-green-300 hover:bg-green-700; }
 
 
 /* --- FORM COMPONENTS --- */
@@ -36,7 +38,10 @@
 .radio-pill.opacity-50 { opacity: 0.5; cursor: not-allowed; }
 .radio-pill.opacity-50 span { @apply hover:border-gray-300; }
 
+
+/* --- BANNERS & INFO BOXES --- */
 .director-info-banner { @apply mt-4 p-4 text-sm bg-blue-50 border-l-4 border-primary-blue text-primary-blue rounded-r-md; }
+.info-banner-limits { @apply p-4 text-sm bg-gray-100 border-l-4 border-gray-400 text-gray-700 rounded-r-md; }
 
 
 /* --- DATEPICKER --- */
@@ -62,7 +67,7 @@
 .summary-heading { @apply font-sans font-bold text-primary-blue text-base; }
 .btn-edit-summary { @apply flex items-center gap-1.5 text-xs font-bold text-primary-blue bg-blue-50 px-2 py-1 rounded-md transition-colors hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-300; }
 
-.mobile-summary-toggle { @apply lg:hidden w-full text-left p-4 bg-light-grey border border-gray-300 rounded-lg text-primary-blue font-bold flex justify-between items-center; }
+.mobile-summary-toggle { @apply lg:hidden w-full text-left p-4 mb-6 bg-light-grey border border-gray-300 rounded-lg text-primary-blue font-bold flex justify-between items-center; }
 .mobile-summary-content { @apply lg:hidden overflow-hidden transition-all duration-500 ease-in-out max-h-0; }
 
 
@@ -73,8 +78,6 @@
 
 
 /* --- RESPONSIVE PROGRESS BAR --- */
-
-/* MOBILE "THREE-SLOT VIEW" */
 .mobile-progress-bar { @apply flex lg:hidden justify-between items-start w-full max-w-md mx-auto h-24 mb-12; }
 .mobile-progress-slot { @apply flex flex-col items-center gap-2 w-1/3 transition-all duration-300 ease-out; }
 .mobile-progress-slot.side { @apply cursor-pointer; }
@@ -83,16 +86,14 @@
 
 .mobile-progress-slot.current .step-icon { @apply w-16 h-16 text-2xl border-4 ring-4 ring-orange-200 border-secondary-orange text-secondary-orange bg-white; }
 .mobile-progress-slot.current .step-title { @apply font-bold text-secondary-orange; }
+.mobile-progress-slot.current.ready .step-icon { @apply border-green-500 text-green-500 ring-green-200; }
+.mobile-progress-slot.current.ready .step-title { @apply text-green-600; }
 
 .mobile-progress-slot.side .step-icon { @apply w-12 h-12 text-xl border-2 bg-white border-primary-blue text-primary-blue; }
 .mobile-progress-slot.side .step-title { @apply font-semibold text-primary-blue; }
+.mobile-progress-slot.side.ready .step-icon { @apply border-green-500 text-green-500; }
+.mobile-progress-slot.side.ready .step-title { @apply text-green-600; }
 
-/* v34.0: NEW "READY" STATE FOR MOBILE */
-.mobile-progress-slot.ready .step-icon { @apply bg-green-500 border-green-500 text-white ring-4 ring-green-200; }
-.mobile-progress-slot.ready .step-title { @apply font-bold text-green-500; }
-
-
-/* DESKTOP "FULL VIEW" */
 .desktop-progress-bar { @apply hidden lg:flex items-start w-full mb-12; }
 .desktop-progress-step { @apply flex-1 flex flex-col items-center relative text-center cursor-pointer; }
 .desktop-progress-step .step-icon { @apply w-12 h-12 rounded-full flex items-center justify-center text-xl border-2 transition-all duration-300 z-10 bg-white; }
@@ -104,6 +105,8 @@
 .desktop-progress-step.active .step-icon { @apply border-secondary-orange text-secondary-orange ring-4 ring-orange-200; }
 .desktop-progress-step.active .step-title { @apply text-secondary-orange font-bold; }
 .desktop-progress-step.active .step-line { @apply bg-gray-300; }
+.desktop-progress-step.active.ready .step-icon { @apply border-green-500 text-green-500 ring-green-200; }
+.desktop-progress-step.active.ready .step-title { @apply text-green-600; }
 
 .desktop-progress-step.complete .step-icon { @apply bg-primary-blue border-primary-blue text-white; }
 .desktop-progress-step.complete .step-title { @apply text-primary-blue; }
@@ -112,8 +115,3 @@
 .desktop-progress-step.pending .step-icon { @apply bg-white border-gray-300 text-gray-400; }
 .desktop-progress-step.pending .step-title { @apply text-gray-500; }
 .desktop-progress-step.pending .step-line { @apply bg-gray-300; }
-
-/* v34.0: NEW "READY" STATE FOR DESKTOP */
-.desktop-progress-step.ready .step-icon { @apply bg-green-500 border-green-500 text-white; }
-.desktop-progress-step.ready .step-title { @apply text-green-500 font-bold; }
-.desktop-progress-step.ready .step-line { @apply bg-green-500; }
