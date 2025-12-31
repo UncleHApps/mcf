@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/assets/MasChemFreight-Favicon-BojvFqgR.png" />
-    
+    <link rel="icon" type="image/png" href="./images/MasChemFreight-Favicon.png" />
+
     <!-- SEO Meta Tags -->
-    <title>Cross-Border FTL Freight (Zim, Zam, Mal) | Maschem Freight</title>
-    <meta name="description" content="Predictable FTL transport from SA to Zim, Zam, & Mal for mining & agri. As direct-asset owners, we deliver on-time results & budget certainty.">
-    
+    <title>Cross-Border FTL Freight (Zim, Zam, Mal) | Mas Freight</title>
+    <meta name="description"
+        content="Predictable FTL transport from SA to Zim, Zam, & Mal for mining & agri. As direct-asset owners, we deliver on-time results & budget certainty.">
+
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- App Styles & Scripts -->
 
-        <!-- START: X-CLOAK FIX -->
+    <!-- START: X-CLOAK FIX -->
     <!-- This style block prevents a flash of unstyled content (FOUC) for Alpine.js components -->
     <style>
-      [x-cloak] { display: none !important; }
+        [x-cloak] {
+            display: none !important;
+        }
     </style>
     <!-- END: X-CLOAK FIX -->
-    
-    
+
+
+
     <!-- Schema Markup -->
     <script type="application/ld+json">
 {
@@ -32,44 +41,46 @@
   "@graph": [
     {
       "@type": "Corporation",
-      "name": "Maschem Freight",
-      "url": "https://www.maschemfreight.co.za",
-      "logo": "https://www.maschemfreight.co.za/images/logo.png",
-      "description": "Maschem Freight is a direct-asset FTL (Full Truck Load) carrier specializing in cross-border transport from South Africa to Zimbabwe, Zambia, and Malawi for the mining, agricultural, and industrial sectors.",
+      "@id": "https://www.masfreight.co.za/#corporation",
+      "name": "Mas Freight",
+      "url": "https://www.masfreight.co.za",
+      "logo": "https://www.masfreight.co.za/images/logo.png",
+      "description": "Mas Freight is a direct-asset FTL (Full Truck Load) carrier specializing in high-reliability cross-border transport from South Africa to Zimbabwe, Zambia, and Malawi.",
       "foundingDate": "1991",
       "slogan": "Predictable Timelines. Budget Certainty. Cross Border Freight Delivered.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+27-11-974-9222",
-        "contactType": "customer support",
-        "areaServed": ["ZA", "ZW", "ZM", "MW"],
-        "availableLanguage": ["en"]
-      }
+      "knowsAbout": ["Cross-Border Logistics", "FTL Freight", "Mining Logistics", "Agricultural Transport", "Hazchem Transport"],
+      "sameAs": [
+        "https://www.linkedin.com/company/mas-freight"
+      ]
     },
     {
       "@type": "WebSite",
-      "url": "https://www.maschemfreight.co.za",
-      "name": "Maschem Freight",
-      "publisher": {
-        "@id": "https://www.maschemfreight.co.za/#corporation"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.maschemfreight.co.za/search?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
+      "@id": "https://www.masfreight.co.za/#website",
+      "url": "https://www.masfreight.co.za",
+      "name": "Mas Freight",
+      "publisher": { "@id": "https://www.masfreight.co.za/#corporation" }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.masfreight.co.za/#mainService",
+      "name": "Cross-Border FTL Freight Services",
+      "serviceType": "LogisticsService",
+      "provider": { "@id": "https://www.masfreight.co.za/#corporation" },
+      "areaServed": [
+        { "@type": "Country", "name": "South Africa" },
+        { "@type": "Country", "name": "Zimbabwe" },
+        { "@type": "Country", "name": "Zambia" },
+        { "@type": "Country", "name": "Malawi" }
+      ],
+      "description": "Dedicated Full Truck Load (FTL) transport solutions for mining, agriculture, and industrial sectors across Southern Africa with guaranteed budget certainty."
     },
     {
       "@type": "LocalBusiness",
-      "@id": "https://www.maschemfreight.co.za/#isando",
-      "name": "Maschem Freight - Johannesburg HQ",
-      "description": "Primary depot for cross-border FTL freight to Zimbabwe, Zambia, and Malawi. Located in Isando, Johannesburg.",
-      "image": "https://www.maschemfreight.co.za/images/Mas-Freight-Fleet.webp",
+      "@id": "https://www.masfreight.co.za/#isando",
+      "name": "Mas Freight - Johannesburg HQ",
+      "parentOrganization": { "@id": "https://www.masfreight.co.za/#corporation" },
+      "image": "https://www.masfreight.co.za/images/Mas-Freight-Fleet.webp",
       "telephone": "+27-11-974-9222",
-      "email": "mkuguyo@maschemfreight.co.za",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Unit A, 38 Monteer Road",
@@ -85,327 +96,440 @@
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         "opens": "08:00",
         "closes": "17:00"
-      },
-      "priceRange": "$$$",
-      "parentOrganization": {
-        "@id": "https://www.maschemfreight.co.za/#corporation"
       }
     },
     {
       "@type": "LocalBusiness",
-      "@id": "https://www.maschemfreight.co.za/#harare",
-      "name": "Maschem Freight - Harare Operations",
-      "description": "Operational hub in Harare, Zimbabwe for efficient delivery and return logistics.",
-      "image": "https://www.maschemfreight.co.za/images/Mas-Freight-Fleet.webp",
+      "@id": "https://www.masfreight.co.za/#harare",
+      "name": "Mas Freight - Harare Operations",
+      "parentOrganization": { "@id": "https://www.masfreight.co.za/#corporation" },
+      "image": "https://www.masfreight.co.za/images/Mas-Freight-Fleet.webp",
       "telephone": "+263-4-756026",
-      "email": "cnyamayaro@maschemfreight.co.za",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "24 Conald Road, Graniteside",
         "addressLocality": "Harare",
         "addressCountry": "ZW"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "08:00",
-        "closes": "17:00"
-      },
-      "priceRange": "$$$",
-      "parentOrganization": {
-        "@id": "https://www.maschemfreight.co.za/#corporation"
       }
     },
     {
-      "@type": "Service",
-      "serviceType": "Cross-Border FTL Freight",
-      "provider": {
-        "@id": "https://www.maschemfreight.co.za/#corporation"
-      },
-      "areaServed": [
-        {"@type": "Country", "name": "Zimbabwe"},
-        {"@type": "Country", "name": "Zambia"},
-        {"@type": "Country", "name": "Malawi"}
-      ],
-      "audience": {
-        "@type": "Audience",
-        "audienceType": [
-          "Mining Operations",
-          "Commercial Farms",
-          "Construction Companies",
-          "Manufacturing Plants"
-        ]
-      },
-      "name": "Dedicated Full Truck Load (FTL) to Zimbabwe, Zambia, & Malawi"
-    },
-    {
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How long does cross border delivery take from South Africa?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "<p>From our Johannesburg depot to main centres, you can typically expect: Zim: 5-7 days, Zam: 7-9 days, Mal: 9-11 days. We have a perfected Beitbridge border clearance process to minimize delays.</p>"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What is 'Full Truck Load' (FTL) freight?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "<p>FTL means your cargo is the only cargo on the truck. No co-loading. This ensures maximum speed, security, and integrity for your shipment. We handle 34-ton loads in various configurations.</p>"
-                }
+      "@type": "FAQPage",
+      "@id": "https://www.masfreight.co.za/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is 'Full Truck Load' (FTL) freight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FTL means your cargo is the only cargo on the truck. No co-loading. This ensures maximum speed, security, and integrity for your shipment."
+          }
+        },
+        {
+            "@type": "Question",
+            "name": "Which countries do you cover for Import and Export?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We specialize in full truck load (FTL) flows between South Africa, Zimbabwe, Zambia, and Malawi."
             }
-        ]
+        }
+      ]
     }
   ]
 }
 </script>
-  <script type="module" crossorigin src="/assets/main-BHV5KH7H.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-BViXsBeq.css">
+  <script type="module" crossorigin src="/assets/main-BZHlXIR1.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-DOTTVwY5.css">
 </head>
+
 <body class="font-body text-dark-grey antialiased" x-data>
 
     <!-- HEADER (Reusable Component) -->
-    <header x-data="{ mobileMenuOpen: false }" @keydown.escape.window="mobileMenuOpen = false" class="bg-white shadow-md sticky top-0 z-40">
-    <nav class="container mx-auto px-6 sm:px-8 flex justify-between items-center h-20">
-        <a href="index.html" class="font-sans text-2xl font-bold text-primary-blue">MAS<span class="text-secondary-orange">Chem</span>Freight</a>
-        <ul class="hidden lg:flex items-center space-x-8">
-            <!-- START: UPDATED MEGA MENU COMPONENT -->
-            <li x-data="{ megaMenuOpen: false, activeTab: 'cargo' }" @keydown.escape.window="megaMenuOpen = false" @click.outside="megaMenuOpen = false" class="relative">
-                
-                <!-- Menu Trigger Button (remains click) -->
-                <button type="button" @click="megaMenuOpen = !megaMenuOpen" class="font-sans font-semibold text-primary-blue hover:text-secondary-orange flex items-center gap-1 transition-colors">
-                    <span>Solutions</span> <i class="fas fa-chevron-down fa-xs transition-transform duration-200" :class="{'rotate-180': megaMenuOpen}"></i>
-                </button>
-
-                <!-- Mega Menu Panel (THIS LINE IS CHANGED) -->
-                <div x-show="megaMenuOpen" 
-                     x-transition:enter="transition ease-out duration-200"
-                     x-transition:enter-start="opacity-0 translate-y-2"
-                     x-transition:enter-end="opacity-100 translate-y-0"
-                     x-transition:leave="transition ease-in duration-150"
-                     x-transition:leave-start="opacity-100 translate-y-0"
-                     x-transition:leave-end="opacity-0 translate-y-2"
-                     class="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-screen max-w-4xl" x-cloak>
-                    
-                    <div class="flex overflow-hidden rounded-lg shadow-xl ring-1 ring-black ring-opacity-5">
-                        
-                        <!-- Sidebar for Categories -->
-                        <div class="w-1/3 bg-light-grey p-4 space-y-2">
-                            <button @mouseenter="activeTab = 'cargo'" @focus="activeTab = 'cargo'"
-                               :class="{ 'bg-white text-secondary-orange shadow-sm': activeTab === 'cargo', 'hover:bg-gray-200 text-primary-blue': activeTab !== 'cargo' }" 
-                               class="w-full text-left font-sans font-semibold p-3 rounded-md transition-colors duration-150">
-                                Cargo Types
-                            </button>
-                            <button @mouseenter="activeTab = 'industries'" @focus="activeTab = 'industries'"
-                               :class="{ 'bg-white text-secondary-orange shadow-sm': activeTab === 'industries', 'hover:bg-gray-200 text-primary-blue': activeTab !== 'industries' }" 
-                               class="w-full text-left font-sans font-semibold p-3 rounded-md transition-colors duration-150">
-                                Industries Served
-                            </button>
-                            <button @mouseenter="activeTab = 'destinations'" @focus="activeTab = 'destinations'"
-                               :class="{ 'bg-white text-secondary-orange shadow-sm': activeTab === 'destinations', 'hover:bg-gray-200 text-primary-blue': activeTab !== 'destinations' }" 
-                               class="w-full text-left font-sans font-semibold p-3 rounded-md transition-colors duration-150">
-                                Destination Countries
-                            </button>
-                        </div>
-                        
-                        <!-- Content Area for Links -->
-                        <div class="w-2/3 bg-white p-6">
-                            <!-- Cargo Types Links -->
-                            <div x-show="activeTab === 'cargo'" class="space-y-4">
-                                <a href="/dedicated-hazchem-freight.html" class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
-                                    <i class="fas fa-exclamation-triangle fa-fw text-secondary-orange text-xl mt-1"></i>
-                                    <div><div class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Dedicated Hazchem Freight</div><p class="text-sm text-gray-500">Compliant and secure transport for hazardous materials.</p></div>
-                                </a>
-                                <a href="/general-cargo-ftl-freight.html" class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
-                                    <i class="fas fa-box-open fa-fw text-secondary-orange text-xl mt-1"></i>
-                                    <div><div class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">General Cargo FTL Freight</div><p class="text-sm text-gray-500">The specialist advantage for all your general cargo.</p></div>
-                                </a>
+    <header x-data="{ mobileMenuOpen: false }" @keydown.escape.window="mobileMenuOpen = false"
+        class="bg-white shadow-md sticky top-0 z-40">
+        <nav class="container mx-auto px-6 sm:px-8 flex justify-between items-center h-20">
+            <a href="index.html" class="font-sans text-2xl font-bold text-primary-blue">Mas<span
+                    class="text-secondary-orange"> Freight</span></a>
+            <ul class="hidden lg:flex items-center space-x-8">
+                <!-- START: UPDATED MEGA MENU COMPONENT -->
+                <li x-data="{ megaMenuOpen: false, activeTab: 'cargo' }" @keydown.escape.window="megaMenuOpen = false"
+                    @click.outside="megaMenuOpen = false" class="relative">
+    
+                    <!-- Menu Trigger Button (remains click) -->
+                    <button type="button" @click="megaMenuOpen = !megaMenuOpen"
+                        class="font-sans font-semibold text-primary-blue hover:text-secondary-orange flex items-center gap-1 transition-colors">
+                        <span>Solutions</span> <i class="fas fa-chevron-down fa-xs transition-transform duration-200"
+                            :class="{'rotate-180': megaMenuOpen}"></i>
+                    </button>
+    
+                    <!-- Mega Menu Panel (THIS LINE IS CHANGED) -->
+                    <div x-show="megaMenuOpen" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 translate-y-2"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 translate-y-0"
+                        x-transition:leave-end="opacity-0 translate-y-2"
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-screen max-w-4xl" x-cloak>
+    
+                        <div class="flex overflow-hidden rounded-lg shadow-xl ring-1 ring-black ring-opacity-5">
+    
+                            <!-- Sidebar for Categories -->
+                            <div class="w-1/3 bg-light-grey p-4 space-y-2">
+                                <button @mouseenter="activeTab = 'cargo'" @focus="activeTab = 'cargo'"
+                                    :class="{ 'bg-white text-secondary-orange shadow-sm': activeTab === 'cargo', 'hover:bg-gray-200 text-primary-blue': activeTab !== 'cargo' }"
+                                    class="w-full text-left font-sans font-semibold p-3 rounded-md transition-colors duration-150">
+                                    Cargo Types
+                                </button>
+                                <button @mouseenter="activeTab = 'industries'" @focus="activeTab = 'industries'"
+                                    :class="{ 'bg-white text-secondary-orange shadow-sm': activeTab === 'industries', 'hover:bg-gray-200 text-primary-blue': activeTab !== 'industries' }"
+                                    class="w-full text-left font-sans font-semibold p-3 rounded-md transition-colors duration-150">
+                                    Industries Served
+                                </button>
+                                <button @mouseenter="activeTab = 'destinations'" @focus="activeTab = 'destinations'"
+                                    :class="{ 'bg-white text-secondary-orange shadow-sm': activeTab === 'destinations', 'hover:bg-gray-200 text-primary-blue': activeTab !== 'destinations' }"
+                                    class="w-full text-left font-sans font-semibold p-3 rounded-md transition-colors duration-150">
+                                    Destination Countries
+                                </button>
                             </div>
-
-                            <!-- Industries Served Links -->
-                            <div x-show="activeTab === 'industries'" class="space-y-4">
-                                <a href="/mining-industrial-chemical-transport.html" class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
-                                    <i class="fas fa-industry fa-fw text-secondary-orange text-xl mt-1"></i>
-                                    <div><div class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Mining & Industrial</div><p class="text-sm text-gray-500">Logistics for high-value chemicals and equipment.</p></div>
-                                </a>
-                                <a href="/agricultural-farming-logistics.html" class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
-                                    <i class="fas fa-leaf fa-fw text-secondary-orange text-xl mt-1"></i>
-                                    <div><div class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Agriculture & Farming</div><p class="text-sm text-gray-500">Reliable transport for chemicals and produce.</p></div>
-                                </a>
-                                <a href="/construction-manufacturing-freight.html" class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
-                                    <i class="fas fa-hard-hat fa-fw text-secondary-orange text-xl mt-1"></i>
-                                    <div><div class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Construction & Mfg.</div><p class="text-sm text-gray-500">On-time freight for materials and project cargo.</p></div>
-                                </a>
-                            </div>
-
-                            <!-- Destination Countries Links -->
-                            <div x-show="activeTab === 'destinations'" class="space-y-4">
-                                <a href="/cross-border-freight-zimbabwe.html" class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
-                                    <i class="fas fa-map-marker-alt fa-fw text-secondary-orange text-xl mt-1"></i>
-                                    <div><div class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Freight to Zimbabwe</div><p class="text-sm text-gray-500">Our advantage at the Beitbridge border crossing.</p></div>
-                                </a>
-                                <a href="/cross-border-freight-zambia.html" class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
-                                    <i class="fas fa-map-marker-alt fa-fw text-secondary-orange text-xl mt-1"></i>
-                                    <div><div class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Freight to Zambia</div><p class="text-sm text-gray-500">Specialist logistics for Lusaka and the Copperbelt.</p></div>
-                                </a>
-                                <a href="/cross-border-freight-malawi.html" class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
-                                    <i class="fas fa-map-marker-alt fa-fw text-secondary-orange text-xl mt-1"></i>
-                                    <div><div class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">Freight to Malawi</div><p class="text-sm text-gray-500">Reliable long-haul via the Tete Corridor.</p></div>
-                                </a>
+    
+                            <!-- Content Area for Links -->
+                            <div class="w-2/3 bg-white p-6">
+                                <!-- Cargo Types Links -->
+                                <div x-show="activeTab === 'cargo'" class="space-y-4">
+                                    <a href="/dedicated-hazchem-freight.html"
+                                        class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
+                                        <i class="fas fa-exclamation-triangle fa-fw text-secondary-orange text-xl mt-1"></i>
+                                        <div>
+                                            <div
+                                                class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">
+                                                Dedicated Hazchem Freight</div>
+                                            <p class="text-sm text-gray-500">Compliant and secure transport for hazardous
+                                                materials.</p>
+                                        </div>
+                                    </a>
+                                    <a href="/general-cargo-ftl-freight.html"
+                                        class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
+                                        <i class="fas fa-box-open fa-fw text-secondary-orange text-xl mt-1"></i>
+                                        <div>
+                                            <div
+                                                class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">
+                                                General Cargo FTL Freight</div>
+                                            <p class="text-sm text-gray-500">The specialist advantage for all your general
+                                                cargo.</p>
+                                        </div>
+                                        <a href="/import-export.html"
+                                            class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
+                                            <i class="fas fa-ship fa-fw text-secondary-orange text-xl mt-1"></i>
+                                            <div>
+                                                <div
+                                                    class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">
+                                                    Import / Export Goods</div>
+                                                <p class="text-sm text-gray-500">Targeted logistics for international trade
+                                                    flows.</p>
+                                            </div>
+                                        </a>
+                                </div>
+    
+                                <!-- Industries Served Links -->
+                                <div x-show="activeTab === 'industries'" class="space-y-4">
+                                    <a href="/mining-industrial-chemical-transport.html"
+                                        class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
+                                        <i class="fas fa-industry fa-fw text-secondary-orange text-xl mt-1"></i>
+                                        <div>
+                                            <div
+                                                class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">
+                                                Mining & Industrial</div>
+                                            <p class="text-sm text-gray-500">Logistics for high-value chemicals and
+                                                equipment.</p>
+                                        </div>
+                                    </a>
+                                    <a href="/agricultural-farming-logistics.html"
+                                        class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
+                                        <i class="fas fa-leaf fa-fw text-secondary-orange text-xl mt-1"></i>
+                                        <div>
+                                            <div
+                                                class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">
+                                                Agriculture & Farming</div>
+                                            <p class="text-sm text-gray-500">Reliable transport for chemicals and produce.
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="/construction-manufacturing-freight.html"
+                                        class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
+                                        <i class="fas fa-hard-hat fa-fw text-secondary-orange text-xl mt-1"></i>
+                                        <div>
+                                            <div
+                                                class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">
+                                                Construction & Mfg.</div>
+                                            <p class="text-sm text-gray-500">On-time freight for materials and project
+                                                cargo.</p>
+                                        </div>
+                                    </a>
+                                </div>
+    
+                                <!-- Destination Countries Links -->
+                                <div x-show="activeTab === 'destinations'" class="space-y-4">
+                                    <a href="/cross-border-freight-zimbabwe.html"
+                                        class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
+                                        <i class="fas fa-map-marker-alt fa-fw text-secondary-orange text-xl mt-1"></i>
+                                        <div>
+                                            <div
+                                                class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">
+                                                Freight to Zimbabwe</div>
+                                            <p class="text-sm text-gray-500">Our advantage at the Beitbridge border
+                                                crossing.</p>
+                                        </div>
+                                    </a>
+                                    <a href="/cross-border-freight-zambia.html"
+                                        class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
+                                        <i class="fas fa-map-marker-alt fa-fw text-secondary-orange text-xl mt-1"></i>
+                                        <div>
+                                            <div
+                                                class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">
+                                                Freight to Zambia</div>
+                                            <p class="text-sm text-gray-500">Specialist logistics for Lusaka and the
+                                                Copperbelt.</p>
+                                        </div>
+                                    </a>
+                                    <a href="/cross-border-freight-malawi.html"
+                                        class="group flex items-start gap-4 p-3 rounded-lg hover:bg-light-grey transition-colors">
+                                        <i class="fas fa-map-marker-alt fa-fw text-secondary-orange text-xl mt-1"></i>
+                                        <div>
+                                            <div
+                                                class="font-sans font-semibold text-primary-blue group-hover:text-secondary-orange">
+                                                Freight to Malawi</div>
+                                            <p class="text-sm text-gray-500">Reliable long-haul via the Tete Corridor.</p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </li>
+                <!-- END: UPDATED MEGA MENU COMPONENT -->
+                <li><a href="index.html#about"
+                        class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">Our
+                        Promise</a></li>
+                <li><a href="index.html#faq"
+                        class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">FAQ</a>
+                </li>
+                <li><a href="contact.html"
+                        class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">Contact</a>
+                </li>
+                <li class="hidden md:block"><button @click="$store.modal.open()"
+                        class="bg-secondary-orange text-white font-sans font-bold py-2 px-5 rounded-md hover:bg-orange-600 transition-transform hover:scale-105">Get
+                        My Certainty Quote</button></li>
+            </ul>
+            <div class="lg:hidden">
+                <button @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Open main menu"><i
+                        class="fas fa-bars text-2xl text-primary-blue"></i></button>
+            </div>
+        </nav>
+    
+        <!-- UPDATED MOBILE MENU -->
+        <div x-show="mobileMenuOpen" class="lg:hidden" x-cloak>
+            <div class="p-4 space-y-1">
+                <p class="px-4 pt-2 text-xs font-bold uppercase text-gray-500">Cargo Types</p>
+                <a href="/dedicated-hazchem-freight.html"
+                    class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Dedicated Hazchem
+                    Freight</a>
+                <a href="/general-cargo-ftl-freight.html"
+                    class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">General Cargo FTL
+                    Freight</a>
+                <a href="/import-export.html"
+                    class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Import / Export
+                    Goods</a>
+    
+                <p class="px-4 pt-4 text-xs font-bold uppercase text-gray-500">Industries Served</p>
+                <a href="/mining-industrial-chemical-transport.html"
+                    class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Mining &
+                    Industrial</a>
+                <a href="/agricultural-farming-logistics.html"
+                    class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Agriculture &
+                    Farming</a>
+                <a href="/construction-manufacturing-freight.html"
+                    class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Construction &
+                    Mfg.</a>
+    
+                <p class="px-4 pt-4 text-xs font-bold uppercase text-gray-500">Destinations</p>
+                <a href="/cross-border-freight-zimbabwe.html"
+                    class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Freight to
+                    Zimbabwe</a>
+                <a href="/cross-border-freight-zambia.html"
+                    class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Freight to
+                    Zambia</a>
+                <a href="/cross-border-freight-malawi.html"
+                    class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Freight to
+                    Malawi</a>
+    
+                <div class="pt-4 border-t border-gray-200 mt-2">
+                    <a href="index.html#about" @click="mobileMenuOpen = false"
+                        class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Our
+                        Promise</a>
+                    <a href="index.html#faq" @click="mobileMenuOpen = false"
+                        class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">FAQ</a>
+                    <a href="contact.html" @click="mobileMenuOpen = false"
+                        class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Contact
+                        Us</a>
+                    <button @click="$store.modal.open(); mobileMenuOpen = false;"
+                        class="w-full mt-2 bg-secondary-orange text-white font-sans font-bold py-3 px-5 rounded-md">Get My
+                        Certainty Quote</button>
                 </div>
-            </li>
-            <!-- END: UPDATED MEGA MENU COMPONENT -->
-            <li><a href="index.html#about" class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">Our Promise</a></li>
-            <li><a href="index.html#faq" class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">FAQ</a></li>
-            <li class="hidden md:block"><button @click="$store.modal.open()" class="bg-secondary-orange text-white font-sans font-bold py-2 px-5 rounded-md hover:bg-orange-600 transition-transform hover:scale-105">Get My Certainty Quote</button></li>
-        </ul>
-        <div class="lg:hidden">
-            <button @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Open main menu"><i class="fas fa-bars text-2xl text-primary-blue"></i></button>
-        </div>
-    </nav>
-
-    <!-- UPDATED MOBILE MENU -->
-    <div x-show="mobileMenuOpen" class="lg:hidden" x-cloak>
-         <div class="p-4 space-y-1">
-            <p class="px-4 pt-2 text-xs font-bold uppercase text-gray-500">Cargo Types</p>
-            <a href="/dedicated-hazchem-freight.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Dedicated Hazchem Freight</a>
-            <a href="/general-cargo-ftl-freight.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">General Cargo FTL Freight</a>
-            
-            <p class="px-4 pt-4 text-xs font-bold uppercase text-gray-500">Industries Served</p>
-            <a href="/mining-industrial-chemical-transport.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Mining & Industrial</a>
-            <a href="/agricultural-farming-logistics.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Agriculture & Farming</a>
-            <a href="/construction-manufacturing-freight.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Construction & Mfg.</a>
-
-            <p class="px-4 pt-4 text-xs font-bold uppercase text-gray-500">Destinations</p>
-            <a href="/cross-border-freight-zimbabwe.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Freight to Zimbabwe</a>
-            <a href="/cross-border-freight-zambia.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Freight to Zambia</a>
-            <a href="/cross-border-freight-malawi.html" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Freight to Malawi</a>
-
-            <div class="pt-4 border-t border-gray-200 mt-2">
-                <a href="index.html#about" @click="mobileMenuOpen = false" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Our Promise</a>
-                <a href="index.html#faq" @click="mobileMenuOpen = false" class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">FAQ</a>
-                 <button @click="$store.modal.open(); mobileMenuOpen = false;" class="w-full mt-2 bg-secondary-orange text-white font-sans font-bold py-3 px-5 rounded-md">Get My Certainty Quote</button>
             </div>
         </div>
-    </div>
-</header>
-
+    </header>
     <main>
 
         <!-- START: FINAL HERO SECTION (LEFT-ALIGNED) -->
-<section id="hero" class="bg-primary-blue text-white flex items-center" style="min-height: 85vh; height: 85vh;">
-    <div class="container mx-auto px-6 sm:px-8">
+        <section id="hero"
+            class="bg-cover bg-center bg-no-repeat text-white flex items-center min-h-[80vh] md:min-h-[85vh] py-20 md:py-0"
+            style="background-image: linear-gradient(to right, #0A2342 0%, #0A2342 15%, rgba(10, 35, 66, 0.70) 70%, rgba(10, 35, 66, 0) 100%), url('/images/Mas_Freight-Fleet-002.webp');">
+            <div class="container mx-auto px-6 sm:px-8">
 
-        <!-- Max-width wrapper to control content width and ensure left alignment -->
-        <div class="max-w-4xl text-left">
-            
-            <!-- Headline & Sub-headline -->
-            <div>
-                <h1 class="font-sans text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Get Budget Certainty and Predictable Timelines for your <span class="text-secondary-orange">Cross Border Freight</span></h1>
-                <p class="text-lg md:text-xl text-text-light-dim max-w-3xl">Tired of your day being run by someone else's dispatch schedule? It’s time you experienced the control of the Direct-Asset Difference.</p>
-            </div>
+                <!-- Max-width wrapper to control content width and ensure left alignment -->
+                <div class="max-w-4xl text-left">
 
-            <!-- Primary Destinations -->
-            <div class="mt-12">
-                <span class="font-semibold text-white text-lg">Primary Destinations:</span>
-                
-                <!-- Pills container that wraps on smaller screens -->
-                <div class="mt-4 flex flex-wrap gap-3">
-                    <a href="/cross-border-freight-zimbabwe.html" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-full transition-all duration-200 ease-in-out transform hover:-translate-y-1">
-                        <i class="fas fa-map-marker-alt text-secondary-orange"></i>
-                        <span>Zimbabwe</span>
-                    </a>
-                    <a href="/cross-border-freight-zambia.html" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-full transition-all duration-200 ease-in-out transform hover:-translate-y-1">
-                        <i class="fas fa-map-marker-alt text-secondary-orange"></i>
-                        <span>Zambia</span>
-                    </a>
-                    <a href="/cross-border-freight-malawi.html" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-full transition-all duration-200 ease-in-out transform hover:-translate-y-1">
-                        <i class="fas fa-map-marker-alt text-secondary-orange"></i>
-                        <span>Malawi</span>
-                    </a>
+                    <!-- Headline & Sub-headline -->
+                    <div>
+                        <h1 class="font-sans text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Get Budget
+                            Certainty and Predictable Timelines for your <span class="text-secondary-orange">Cross
+                                Border Freight</span></h1>
+                        <p class="text-lg md:text-xl text-text-light-dim max-w-3xl">Tired of your business being run by
+                            someone else's dispatch schedule?</p>
+                    </div>
+
+                    <!-- Primary Destinations -->
+                    <div class="mt-12">
+                        <span class="font-semibold text-white text-lg tracking-wide text-sm opacity-90"><a
+                                href="/import-export.html" class="hover:text-secondary-orange transition-colors">Full
+                                Truck Load (FTL) </a>Import/Export</span>
+
+                        <!-- Pills container that wraps on smaller screens -->
+                        <div class="mt-6 flex flex-wrap gap-3 md:gap-4">
+                            <a href="/import-export.html"
+                                class="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-full transition-all duration-300 ease-in-out transform hover:-translate-y-1 border border-white/10 hover:border-white/30 shadow-lg hover:shadow-orange-500/20 text-sm md:text-base">
+                                <i class="fas fa-map-marker-alt text-secondary-orange"></i>
+                                <span>South Africa</span>
+                            </a>
+                            <a href="/cross-border-freight-zimbabwe.html"
+                                class="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-full transition-all duration-300 ease-in-out transform hover:-translate-y-1 border border-white/10 hover:border-white/30 shadow-lg hover:shadow-orange-500/20 text-sm md:text-base">
+                                <i class="fas fa-map-marker-alt text-secondary-orange"></i>
+                                <span>Zimbabwe</span>
+                            </a>
+                            <a href="/cross-border-freight-zambia.html"
+                                class="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-full transition-all duration-300 ease-in-out transform hover:-translate-y-1 border border-white/10 hover:border-white/30 shadow-lg hover:shadow-orange-500/20 text-sm md:text-base">
+                                <i class="fas fa-map-marker-alt text-secondary-orange"></i>
+                                <span>Zambia</span>
+                            </a>
+                            <a href="/cross-border-freight-malawi.html"
+                                class="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-full transition-all duration-300 ease-in-out transform hover:-translate-y-1 border border-white/10 hover:border-white/30 shadow-lg hover:shadow-orange-500/20 text-sm md:text-base">
+                                <i class="fas fa-map-marker-alt text-secondary-orange"></i>
+                                <span>Malawi</span>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-        </div>
-    </div>
-</section>
-<!-- END: FINAL HERO SECTION -->
+        </section>
+        <!-- END: FINAL HERO SECTION -->
 
 
         <!-- FINAL TRUST BAR -->
-        <section class="py-16 bg-light-grey">
+        <section class="py-12 md:py-24 bg-light-grey border-b border-gray-200">
             <div class="container mx-auto px-6 sm:px-8">
-                <h2 class="text-center text-primary-blue font-sans font-bold text-3xl mb-12">Trusted By Industry Leaders</h2>
-                <div class="flex flex-wrap justify-center md:justify-around items-center gap-x-12 gap-y-8">
-                    <img src="/assets/Curechem-Logo-C7kOqmxR.webp" alt="Curechem Logo" class="max-h-10 transition-all duration-300 filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100">
-                    <img src="/assets/Rolfes-Group-Logo-Clg7BGkh.webp" alt="Rolfes Group Logo" class="max-h-10 transition-all duration-300 filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100">
-                    <img src="/assets/Afnet-Logo-Bt5l5pRf.webp" alt="Afnet Logo" class="max-h-12 transition-all duration-300 filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100">
-                    <img src="/assets/CWC-Logo-Cy-mM1I5.webp" alt="CWC Logo" class="max-h-12 transition-all duration-300 filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100">
-                    <img src="/assets/NetLogi-Logo-hGDotQeh.webp" alt="NetLogi Logo" class="max-h-10 transition-all duration-300 filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100">
+                <h2
+                    class="text-center text-gray-400 font-sans font-bold text-xs md:text-sm tracking-widest uppercase mb-8 md:mb-12">
+                    Trusted By Industry Leaders</h2>
+                <div class="flex flex-wrap justify-center md:justify-around items-center gap-6 md:gap-x-12 md:gap-y-10">
+                    <img src="/images/Curechem-Logo.webp" alt="Curechem Logo"
+                        class="max-h-8 md:max-h-12 w-auto transition-all duration-500 filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-105">
+                    <img src="/images/Rolfes-Group-Logo.webp" alt="Rolfes Group Logo"
+                        class="max-h-8 md:max-h-12 w-auto transition-all duration-500 filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-105">
+                    <img src="/images/Afnet-Logo.webp" alt="Afnet Logo"
+                        class="max-h-10 md:max-h-14 w-auto transition-all duration-500 filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-105">
+                    <img src="/images/CWC-Logo.webp" alt="CWC Logo"
+                        class="max-h-10 md:max-h-14 w-auto transition-all duration-500 filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-105">
+                    <img src="/images/NetLogi-Logo.webp" alt="NetLogi Logo"
+                        class="max-h-8 md:max-h-12 w-auto transition-all duration-500 filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-105">
                 </div>
             </div>
         </section>
 
         <!-- FINAL "Own the Truck, Own the Result" -->
-        <section class="py-16 md:py-24 bg-light-grey">
+        <section class="py-16 md:py-32 bg-light-grey">
             <div class="container max-w-7xl mx-auto px-6 sm:px-8">
                 <div class="max-w-3xl mx-auto text-left md:text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue">Own the Truck, Own the Result.</h2>
-                    <p class="mt-4 text-lg leading-relaxed">You can have the most perfect plan, the tightest schedule, and the best team. But all of it falls apart the moment your cargo is consolidated onto a truck you don't control.</p>
-                    <p class="mt-6 text-xl md:text-2xl font-bold">We are not a broker. We own the fleet.</p>
-                </div>
-                
-                <div class="mt-12">
-                    
-                    <img src="/assets/Mas-Freight-Fleet-2gNdPAAE.webp" alt="A lineup of the Maschem Freight fleet of trucks" class="rounded-lg shadow-xl w-full h-auto">
-                    <p class="text-sm text-gray-600 mt-2 text-center">Fleet of Maschem Freight trucks ready for cross-border FTL transport to Zimbabwe, Zambia, and Malawi</p>
+                    <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue tracking-tight">Own the Truck,
+                        Own the
+                        Result</h2>
+                    <p class="mt-6 text-lg md:text-xl leading-relaxed text-gray-600">You can have the most perfect plan,
+                        the tightest schedule,
+                        and the best team. But all of it falls apart the moment your cargo is consolidated onto a truck
+                        you don't control.</p>
+                    <p class="mt-8 text-xl md:text-2xl font-bold text-secondary-orange">We are not a broker, We own the
+                        fleet</p>
                 </div>
 
-                <div class="mt-16 bg-white rounded-lg shadow-lg p-8 ring-1 ring-black/5 max-w-5xl mx-auto">
-                    <h3 class="font-sans text-xl font-semibold text-primary-blue text-left md:text-center">Our FTL-Only Promise</h3>
-                    <p class="mt-4 text-left md:text-center text-base leading-relaxed max-w-3xl mx-auto">We are a dedicated <strong>Full Truck Load (FTL)</strong> carrier. This isn't just a service option—it's our entire promise to you. Your cargo gets its own truck, from collection to delivery. No co-loading, no consolidation delays, and no shared risk. Ever. The result is a direct, uninterrupted line to your destination, delivering:</p>
-                    <div class="mt-8 grid sm:grid-cols-3 gap-8">
-                        <div class="flex flex-col items-center text-left md:text-center">
-                            <div class="bg-orange-100 rounded-full h-20 w-20 flex items-center justify-center mb-4">
-                                <i class="fas fa-shipping-fast text-4xl text-secondary-orange"></i>
+                <div class="mt-16">
+                    <img src="/images/Mas-Freight-Fleet.webp" alt="A lineup of the Mas Freight fleet of trucks"
+                        class="rounded-xl shadow-2xl w-full h-auto">
+                    <p class="text-sm text-gray-500 mt-4 text-center italic">Fleet of Mas Freight trucks ready for
+                        cross-border FTL transport to Zimbabwe, Zambia, and Malawi</p>
+                </div>
+
+                <div
+                    class="mt-20 bg-white rounded-3xl shadow-2xl p-10 md:p-16 ring-1 ring-black/5 max-w-5xl mx-auto border border-gray-100 relative overflow-hidden">
+                    <!-- Subtle background decoration -->
+                    <div
+                        class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-secondary-orange/5 rounded-full blur-3xl">
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 class="font-sans text-2xl font-bold text-primary-blue text-left md:text-center mb-6">Our
+                            FTL-Only
+                            Promise</h3>
+                        <p class="text-left md:text-center text-lg leading-relaxed max-w-3xl mx-auto text-gray-600">We
+                            are a
+                            dedicated <strong>Full Truck Load (FTL)</strong> carrier. This isn't just a service
+                            option—it's
+                            our entire promise to you. Your cargo gets its own truck, from collection to delivery. No
+                            co-loading, no consolidation delays, and no shared risk. Ever. The result is a direct,
+                            uninterrupted line to your destination, delivering:</p>
+                        <div class="mt-12 grid sm:grid-cols-3 gap-12">
+                            <div class="flex flex-col items-center text-left md:text-center group">
+                                <div
+                                    class="bg-orange-50 rounded-2xl h-24 w-24 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                                    <i class="fas fa-shipping-fast text-4xl text-secondary-orange"></i>
+                                </div>
+                                <h4 class="font-sans font-bold text-primary-blue text-xl mb-2">Maximum Speed</h4>
+                                <p class="text-base text-gray-600 leading-relaxed">With no other stops, your delivery
+                                    travels on the
+                                    fastest possible route.</p>
                             </div>
-                            <h4 class="font-sans font-bold text-primary-blue text-lg">Maximum Speed</h4>
-                            <p class="text-base text-gray-600 mt-1">With no other stops, your delivery travels on the fastest possible route.</p>
-                        </div>
-                        <div class="flex flex-col items-center text-left md:text-center">
-                            <div class="bg-orange-100 rounded-full h-20 w-20 flex items-center justify-center mb-4">
-                                <i class="fas fa-lock text-4xl text-secondary-orange"></i>
+                            <div class="flex flex-col items-center text-left md:text-center group">
+                                <div
+                                    class="bg-orange-50 rounded-2xl h-24 w-24 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                                    <i class="fas fa-lock text-4xl text-secondary-orange"></i>
+                                </div>
+                                <h4 class="font-sans font-bold text-primary-blue text-xl mb-2">Secure</h4>
+                                <p class="text-base text-gray-600 leading-relaxed">Your shipment is sealed at collection
+                                    and opened
+                                    only at your destination.</p>
                             </div>
-                            <h4 class="font-sans font-bold text-primary-blue text-lg">Secure</h4>
-                            <p class="text-base text-gray-600 mt-1">Your shipment is sealed at collection and opened only at your destination.</p>
-                        </div>
-                        <div class="flex flex-col items-center text-left md:text-center">
-                            <div class="bg-orange-100 rounded-full h-20 w-20 flex items-center justify-center mb-4">
-                                <i class="fas fa-hand-holding-dollar text-4xl text-secondary-orange"></i>
+                            <div class="flex flex-col items-center text-left md:text-center group">
+                                <div
+                                    class="bg-orange-50 rounded-2xl h-24 w-24 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                                    <i class="fas fa-hand-holding-dollar text-4xl text-secondary-orange"></i>
+                                </div>
+                                <h4 class="font-sans font-bold text-primary-blue text-xl mb-2">Budget Certainty</h4>
+                                <p class="text-base text-gray-600 leading-relaxed">The price we quote is for your truck.
+                                    <br>No
+                                    surprises.
+                                </p>
                             </div>
-                            <h4 class="font-sans font-bold text-primary-blue text-lg">Budget Certainty</h4>
-                            <p class="text-base text-gray-600 mt-1">The price we quote is for your truck. <br>No surprises.</p>
                         </div>
                     </div>
                 </div>
@@ -413,73 +537,153 @@
         </section>
 
         <!-- FINAL "Your Direct-from-Owner Advantage" -->
-        <section id="advantages" class="py-16 md:py-24 bg-white">
+        <section id="advantages" class="py-16 md:py-32 bg-white">
             <div class="container max-w-7xl mx-auto px-6 sm:px-8">
                 <div class="text-left md:text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue">Your Direct-from-Owner Advantage</h2>
-                    <p class="mt-4 text-lg leading-relaxed">Eliminate the runaround, the border-crossing bottlenecks, and the tracking blackouts. These are the core advantages of partnering directly with the asset owner.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue tracking-tight">Your
+                        Direct-from-Owner
+                        Advantage</h2>
+                    <p class="mt-6 text-lg md:text-xl leading-relaxed text-gray-600">Eliminate the runaround, the
+                        border-crossing bottlenecks,
+                        and the tracking blackouts. These are the core advantages of partnering directly with the asset
+                        owner.</p>
                 </div>
-                
-                <div class="grid md:grid-cols-3 gap-8 mt-12">
-                    <div class="bg-light-grey p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-left md:text-center">
-                        <div class="bg-orange-100 rounded-full h-20 w-20 flex items-center justify-center mb-4 mx-auto md:mx-auto">
-                            <i class="fas fa-hands-helping text-4xl text-secondary-orange"></i>
+
+                <div class="flex flex-col gap-6 max-w-4xl mx-auto mt-16">
+                    <!-- Item 1 -->
+                    <div
+                        class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 p-6 md:p-8 rounded-3xl bg-light-grey hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-2xl transition-all duration-300 group">
+                        <div
+                            class="bg-orange-50 rounded-2xl h-20 w-20 shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                            <i class="fas fa-hands-helping text-3xl text-secondary-orange"></i>
                         </div>
-                        <h3 class="font-sans text-xl font-bold text-primary-blue mb-2">Your Direct Line to the Driver</h3>
-                        <p>Speak directly to the people managing your truck. Get instant answers, clear accountability, and an end to the frustrating runaround.</p>
+                        <div class="text-center md:text-left">
+                            <h3 class="font-sans text-xl md:text-2xl font-bold text-primary-blue mb-2">Your Direct Line
+                                to the Driver
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed text-base md:text-lg">Speak directly to the people
+                                managing your truck. Get instant answers, clear
+                                accountability,
+                                and an end to the frustrating runaround.</p>
+                        </div>
                     </div>
-                    <div class="bg-light-grey p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-left md:text-center">
-                        <div class="bg-orange-100 rounded-full h-20 w-20 flex items-center justify-center mb-4 mx-auto md:mx-auto">
-                            <i class="fas fa-road-bridge text-4xl text-secondary-orange"></i>
+
+                    <!-- Item 2 -->
+                    <div
+                        class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 p-6 md:p-8 rounded-3xl bg-light-grey hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-2xl transition-all duration-300 group">
+                        <div
+                            class="bg-orange-50 rounded-2xl h-20 w-20 shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                            <i class="fas fa-road-bridge text-3xl text-secondary-orange"></i>
                         </div>
-                        <h3 class="font-sans text-xl font-bold text-primary-blue mb-2">Predictable Through Beitbridge</h3>
-                        <p>Our 30-year-perfected clearance system turns the region’s biggest bottleneck into a predictable advantage for your supply chain.</p>
+                        <div class="text-center md:text-left">
+                            <h3 class="font-sans text-xl md:text-2xl font-bold text-primary-blue mb-2">Predictable
+                                Through Beitbridge
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed text-base md:text-lg">Our 30-year-perfected
+                                clearance system turns the region’s biggest bottleneck into a
+                                predictable advantage for your supply chain.</p>
+                        </div>
                     </div>
-                    <div class="bg-light-grey p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-left md:text-center">
-                        <div class="bg-orange-100 rounded-full h-20 w-20 flex items-center justify-center mb-4 mx-auto md:mx-auto">
-                            <i class="fas fa-file-invoice-dollar text-4xl text-secondary-orange"></i>
+
+                    <!-- Item 3 -->
+                    <div
+                        class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 p-6 md:p-8 rounded-3xl bg-light-grey hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-2xl transition-all duration-300 group">
+                        <div
+                            class="bg-orange-50 rounded-2xl h-20 w-20 shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                            <i class="fas fa-file-invoice-dollar text-3xl text-secondary-orange"></i>
                         </div>
-                        <h3 class="font-sans text-xl font-bold text-primary-blue mb-2">Your Customs Advantage</h3>
-                        <p>As a licensed Remover in Bond (RIB), we ensure your cargo moves swiftly across borders without costly delays.</p>
+                        <div class="text-center md:text-left">
+                            <h3 class="font-sans text-xl md:text-2xl font-bold text-primary-blue mb-2">Your Customs
+                                Advantage (RIB)</h3>
+                            <p class="text-gray-600 leading-relaxed text-base md:text-lg">As a licensed <a
+                                    href="/import-export.html"
+                                    class="text-secondary-orange font-semibold hover:underline">Remover in Bond
+                                    (RIB)</a>, we facilitate seamless international trade, ensuring your export cargo
+                                moves swiftly across borders without upfront VAT and duty bottlenecks.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-       <!-- FINAL "Cross-Border Freight for Your Industry" -->
+        <!-- FINAL "Cross-Border Freight for Your Industry" -->
         <section class="py-16 md:py-24 bg-light-grey">
             <div class="container max-w-7xl mx-auto px-6 sm:px-8">
                 <div class="text-left md:text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue">Cross-Border Freight for Your Industry</h2>
-                    <p class="mt-4 text-lg leading-relaxed max-w-3xl mx-auto">We provide specialised FTL transport solutions for key sectors, ensuring your cargo arrives safely and on time.</p>
-                    <div class="mt-12 grid md:grid-cols-3 gap-8">
-                        <a href="/mining-industrial-chemical-transport.html" class="group relative block h-80 rounded-lg shadow-lg overflow-hidden">
-                            <div class="absolute inset-0 bg-cover bg-center bg-mining-card transform md:group-hover:scale-110 transition-transform duration-500 ease-in-out"></div>
-                            <div class="absolute inset-0 bg-black bg-opacity-50 md:group-hover:bg-opacity-70 transition-all duration-300"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue">Cross-Border Freight for Your
+                        Industry</h2>
+                    <p class="mt-4 text-lg leading-relaxed max-w-3xl mx-auto">We provide specialised FTL transport
+                        solutions for key sectors, ensuring your cargo arrives safely and on time.</p>
+                    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <a href="/mining-industrial-chemical-transport.html"
+                            class="group relative block h-80 rounded-lg shadow-lg overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-cover bg-center bg-mining-card transform md:group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 md:group-hover:bg-opacity-70 transition-all duration-300">
+                            </div>
                             <div class="relative h-full flex flex-col justify-end p-6 text-white">
-                                <h3 class="font-sans text-2xl font-bold drop-shadow-md group-hover:underline">Mining & Industrial</h3>
-                                <div class="opacity-100 transform-none md:opacity-0 md:transform md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out pt-2">
-                                    <p class="text-sm drop-shadow-md">Compliant logistics for high-value mining chemicals and industrial raw materials.</p>
+                                <h3 class="font-sans text-2xl font-bold drop-shadow-md group-hover:underline">Mining &
+                                    Industrial</h3>
+                                <div
+                                    class="opacity-100 transform-none md:opacity-0 md:transform md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out pt-2">
+                                    <p class="text-sm drop-shadow-md">Compliant logistics for high-value mining
+                                        chemicals and industrial raw materials.</p>
                                 </div>
                             </div>
                         </a>
-                        <a href="/agricultural-farming-logistics.html" class="group relative block h-80 rounded-lg shadow-lg overflow-hidden">
-                            <div class="absolute inset-0 bg-cover bg-center bg-agri-card transform md:group-hover:scale-110 transition-transform duration-500 ease-in-out"></div>
-                            <div class="absolute inset-0 bg-black bg-opacity-50 md:group-hover:bg-opacity-70 transition-all duration-300"></div>
+                        <a href="/agricultural-farming-logistics.html"
+                            class="group relative block h-80 rounded-lg shadow-lg overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-cover bg-center bg-agri-card transform md:group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 md:group-hover:bg-opacity-70 transition-all duration-300">
+                            </div>
                             <div class="relative h-full flex flex-col justify-end p-6 text-white">
-                                <h3 class="font-sans text-2xl font-bold drop-shadow-md group-hover:underline">Agriculture & Farming</h3>
-                                <div class="opacity-100 transform-none md:opacity-0 md:transform md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out pt-2">
-                                    <p class="text-sm drop-shadow-md">Reliable transport for agricultural chemicals and time-sensitive produce.</p>
+                                <h3 class="font-sans text-2xl font-bold drop-shadow-md group-hover:underline">
+                                    Agriculture & Farming</h3>
+                                <div
+                                    class="opacity-100 transform-none md:opacity-0 md:transform md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out pt-2">
+                                    <p class="text-sm drop-shadow-md">Reliable transport for agricultural chemicals and
+                                        time-sensitive produce.</p>
                                 </div>
                             </div>
                         </a>
-                        <a href="/construction-manufacturing-freight.html" class="group relative block h-80 rounded-lg shadow-lg overflow-hidden">
-                            <div class="absolute inset-0 bg-cover bg-center bg-construction-card transform md:group-hover:scale-110 transition-transform duration-500 ease-in-out"></div>
-                            <div class="absolute inset-0 bg-black bg-opacity-50 md:group-hover:bg-opacity-70 transition-all duration-300"></div>
+                        <a href="/construction-manufacturing-freight.html"
+                            class="group relative block h-80 rounded-lg shadow-lg overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-cover bg-center bg-construction-card transform md:group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 md:group-hover:bg-opacity-70 transition-all duration-300">
+                            </div>
                             <div class="relative h-full flex flex-col justify-end p-6 text-white">
-                                <h3 class="font-sans text-2xl font-bold drop-shadow-md group-hover:underline">Construction & Mfg.</h3>
-                                <div class="opacity-100 transform-none md:opacity-0 md:transform md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out pt-2">
-                                    <p class="text-sm drop-shadow-md">On-time freight for building materials, project cargo, and manufacturing components.</p>
+                                <h3 class="font-sans text-2xl font-bold drop-shadow-md group-hover:underline">
+                                    Construction & Mfg.</h3>
+                                <div
+                                    class="opacity-100 transform-none md:opacity-0 md:transform md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out pt-2">
+                                    <p class="text-sm drop-shadow-md">On-time freight for building materials, project
+                                        cargo, and manufacturing components.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/import-export.html"
+                            class="group relative block h-80 rounded-lg shadow-lg overflow-hidden border-2 border-secondary-orange/20">
+                            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat transform md:group-hover:scale-110 transition-transform duration-500 ease-in-out"
+                                style="background-image: url('/images/Import-Export-Road-Freight.webp');">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-primary-blue bg-opacity-60 md:group-hover:bg-opacity-80 transition-all duration-300">
+                            </div>
+                            <div class="relative h-full flex flex-col justify-end p-6 text-white text-center">
+                                <h3 class="font-sans text-2xl font-bold drop-shadow-md group-hover:underline">Import &
+                                    Export Services</h3>
+                                <div
+                                    class="opacity-100 transform-none md:opacity-0 md:transform md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out pt-2">
+                                    <p class="text-sm drop-shadow-md">Seamless cross-border trade between SA, Zimbabwe,
+                                        Zambia, & Malawi.</p>
                                 </div>
                             </div>
                         </a>
@@ -489,10 +693,11 @@
         </section>
 
         <!-- FINAL "Our Promise, Forged in 1991" -->
-        <section id="about" class="py-16 md:py-24 bg-white">
+        <section id="about" class="py-16 md:py-32 bg-white">
             <div class="container max-w-7xl mx-auto px-6 sm:px-8">
-                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue">Our Promise, Forged in 1991</h2>
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue">Our Promise, Forged in 1991
+                    </h2>
                     <p class="mt-2 text-lg italic text-gray-600">A note from the director:</p>
                 </div>
                 <!-- START: NEW "OUR PROMISE" LAYOUT -->
@@ -501,92 +706,121 @@
                     <!-- Part 1: The Story & The Director -->
                     <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
                         <div class="lg:col-span-3 space-y-6">
-                            <p class="text-lg font-semibold leading-relaxed">In 1991, my father started this business with one truck and a simple, powerful promise: be the most reliable name on the road. For years, he perfected that promise with general freight, building a reputation for unwavering dependability.</p>
-                            <p class="leading-relaxed">As we grew, we saw a persistent challenge in the market. We realized that for high-stakes cargo, true reliability wasn't just about a good driver—it was about owning the entire process. The market needed a partner who could provide a direct, unbroken chain of custody from collection to delivery.</p>
-                            <p class="leading-relaxed">That realization created the Maschem Freight of today. I'm proud to carry on my father's original promise by providing a level of certainty the market was missing. We treat every high-value load with the absolute expert care it requires, because for us, that professional standard is the only way to deliver true reliability.</p>
+                            <p class="text-lg font-semibold leading-relaxed">In 1991, my father started this business
+                                with one truck and a simple, powerful promise: be the most reliable name on the road.
+                                For years, he perfected that promise with general freight, building a reputation for
+                                unwavering dependability.</p>
+                            <p class="leading-relaxed">As we grew, we saw a persistent challenge in the market. We
+                                realized that for high-stakes cargo, true reliability wasn't just about a good driver—it
+                                was about owning the entire process. The market needed a partner who could provide a
+                                direct, unbroken chain of custody from collection to delivery.</p>
+                            <p class="leading-relaxed">That realization created the Mas Freight of today. I'm proud
+                                to carry on my father's original promise by providing a level of certainty the market
+                                was missing. We treat every high-value load with the absolute expert care it requires,
+                                because for us, that professional standard is the only way to deliver true reliability.
+                            </p>
                         </div>
                         <div class="lg:col-span-2 text-center">
-                            <img src="/assets/Masa-Director-MasChem-BU8jHAei.webp" alt="Current director of Maschem Freight" width="550" height="600" class="rounded-lg shadow-xl inline-block w-full h-auto max-w-sm">
-                            <p class="text-sm text-gray-600 mt-2 text-center">Masa Kuguyo, Director of Maschem Freight, a direct-asset logistics company</p>
+                            <img src="/images/Masa-Director-MasChem.webp" alt="Current director of Mas Freight"
+                                width="550" height="600"
+                                class="rounded-lg shadow-xl inline-block w-full h-auto max-w-sm">
+                            <p class="text-sm text-gray-600 mt-2 text-center">Masa Kuguyo, Director of Mas Freight,
+                                a direct-asset freight provider</p>
                         </div>
                     </div>
 
+                    <!-- END: NEW "OUR PROMISE" LAYOUT -->
                     <!-- Part 2: The Core Values Grid -->
-                    <div class="mt-16 md:mt-24 pt-12 border-t">
-                        <h3 class="font-sans text-2xl font-bold text-primary-blue text-center">Our Principles in Practice</h3>
-                        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="mt-20 md:mt-24 pt-12 border-t border-gray-100">
+                        <h3 class="font-sans text-2xl font-bold text-primary-blue text-center mb-16">Our Principles in
+                            Practice
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
                             <!-- Value 1: Safety -->
-                            <div class="bg-light-grey p-8 rounded-lg text-left">
-                                <div class="flex items-start">
-                                    <i class="fas fa-shield-alt text-3xl text-secondary-orange fa-fw mr-5 mt-1"></i>
-                                    <div>
-                                        <h4 class="font-sans font-bold text-primary-blue">Unwavering Safety</h4>
-                                        <p class="text-gray-600 mt-1">Our flawless record isn't luck; it's our ingrained culture.</p>
-                                    </div>
-                                </div>
+                            <div class="border-l-4 border-secondary-orange pl-6">
+                                <i class="fas fa-shield-alt text-3xl text-secondary-orange/80 mb-4 block"></i>
+                                <h4 class="font-sans font-bold text-primary-blue text-lg">Unwavering Safety</h4>
+                                <p class="text-gray-600 mt-2 text-sm leading-relaxed">Our flawless record isn't luck;
+                                    it's our
+                                    ingrained culture.</p>
                             </div>
                             <!-- Value 2: Reliability -->
-                             <div class="bg-light-grey p-8 rounded-lg text-left">
-                                <div class="flex items-start">
-                                    <i class="fas fa-clock text-3xl text-secondary-orange fa-fw mr-5 mt-1"></i>
-                                    <div>
-                                        <h4 class="font-sans font-bold text-primary-blue">Steadfast Reliability</h4>
-                                        <p class="text-gray-600 mt-1">Your deadlines are our deadlines. Period.</p>
-                                    </div>
-                                </div>
+                            <div class="border-l-4 border-secondary-orange pl-6">
+                                <i class="fas fa-clock text-3xl text-secondary-orange/80 mb-4 block"></i>
+                                <h4 class="font-sans font-bold text-primary-blue text-lg">Steadfast Reliability</h4>
+                                <p class="text-gray-600 mt-2 text-sm leading-relaxed">Your deadlines are our deadlines.
+                                    Period.
+                                </p>
                             </div>
                             <!-- Value 3: Client-First -->
-                             <div class="bg-light-grey p-8 rounded-lg text-left">
-                                <div class="flex items-start">
-                                    <i class="fas fa-users text-3xl text-secondary-orange fa-fw mr-5 mt-1"></i>
-                                    <div>
-                                        <h4 class="font-sans font-bold text-primary-blue">Client-First Approach</h4>
-                                        <p class="text-gray-600 mt-1">Direct, honest, and built on lasting relationships.</p>
-                                    </div>
-                                </div>
+                            <div class="border-l-4 border-secondary-orange pl-6">
+                                <i class="fas fa-users text-3xl text-secondary-orange/80 mb-4 block"></i>
+                                <h4 class="font-sans font-bold text-primary-blue text-lg">Client-First Approach</h4>
+                                <p class="text-gray-600 mt-2 text-sm leading-relaxed">Direct, honest, and built on
+                                    lasting
+                                    relationships.</p>
                             </div>
                             <!-- Value 4: Integrity -->
-                             <div class="bg-light-grey p-8 rounded-lg text-left">
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-double text-3xl text-secondary-orange fa-fw mr-5 mt-1"></i>
-                                    <div>
-                                        <h4 class="font-sans font-bold text-primary-blue">Integrity</h4>
-                                        <p class="text-gray-600 mt-1">Fair pricing, ethical work. Always – it's how we started.</p>
-                                    </div>
-                                </div>
+                            <div class="border-l-4 border-secondary-orange pl-6">
+                                <i class="fas fa-check-double text-3xl text-secondary-orange/80 mb-4 block"></i>
+                                <h4 class="font-sans font-bold text-primary-blue text-lg">Integrity</h4>
+                                <p class="text-gray-600 mt-2 text-sm leading-relaxed">Fair pricing, ethical work. Always
+                                    – it's
+                                    how we started.</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <!-- END: NEW "OUR PROMISE" LAYOUT -->
-            </div>
         </section>
 
         <!-- FINAL Featured Testimonial -->
-        <section class="py-16 md:py-24 bg-primary-dark text-white">
-            <div class="container max-w-4xl mx-auto px-6 sm:px-8 text-center relative">
-                 <p class="text-xl md:text-2xl italic mb-6 relative">
-                    <span class="absolute -top-4 left-0 -translate-x-full text-7xl text-secondary-orange opacity-30 font-serif">“</span>
-                    I was suspicious of their 'no hazchem premium' claim, but the quotes were real. We've reduced our transport budget by 15%... the direct communication with their team saves my staff hours every week.
+        <section class="py-24 md:py-32 bg-primary-dark text-white relative overflow-hidden">
+            <!-- Watermark -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl opacity-5 pointer-events-none">
+                <img src="/images/Mas-Freight-Logo-White.svg" alt="Mas Freight Watermark" class="w-full">
+            </div>
+
+            <div class="container max-w-5xl mx-auto px-6 sm:px-8 text-center relative z-10">
+                <div class="mb-10">
+                    <i class="fas fa-quote-left text-5xl text-secondary-orange/40"></i>
+                </div>
+                <p class="text-2xl md:text-3xl italic mb-10 leading-relaxed font-light font-body">
+                    "I was suspicious of their 'no hazchem premium' claim, but the quotes were real. We've reduced our
+                    transport budget by 15%... the direct communication with their team saves my staff hours every
+                    week."
                 </p>
-                <p class="font-sans font-bold text-secondary-orange mt-8">- Supply Chain Director, Regional Chemical Manufacturer</p>
+                <div class="flex flex-col items-center">
+                    <div class="h-1 w-20 bg-secondary-orange mb-6"></div>
+                    <p class="font-sans font-bold text-white text-lg tracking-wide uppercase">Supply Chain Director</p>
+                    <p class="text-gray-400 text-sm mt-1">Regional Chemical Manufacturer</p>
+                </div>
             </div>
         </section>
-       
+
         <!-- FINAL FAQ Section -->
         <section id="faq" class="py-16 md:py-24 bg-light-grey">
             <div class="container max-w-4xl mx-auto px-6 sm:px-8">
-                <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue text-center">Your Questions, Answered</h2>
+                <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue text-center">Your Questions,
+                    Answered</h2>
                 <div class="mt-12 space-y-3">
-                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm">
+                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm transition-all duration-300"
+                        :class="{'ring-2 ring-secondary-orange shadow-lg': isOpen}">
                         <h3>
-                            <button @click="isOpen = !isOpen" class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue" :aria-expanded="isOpen">
+                            <button @click="isOpen = !isOpen"
+                                class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue"
+                                :aria-expanded="isOpen">
                                 <span>How long does cross border delivery take?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300" :class="{'rotate-180': isOpen}"></i>
+                                <i class="fas fa-chevron-down transition-transform duration-300"
+                                    :class="{'rotate-180': isOpen}"></i>
                             </button>
                         </h3>
-                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2">
+                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-200"
+                            x-transition:leave-start="opacity-100 translate-y-0"
+                            x-transition:leave-end="opacity-0 -translate-y-2">
                             <div class="p-5 pt-0 text-gray-600">
                                 <p>From Johannesburg, typical delivery to main centres:</p>
                                 <ul class="list-disc list-inside mt-2 space-y-1">
@@ -597,14 +831,23 @@
                             </div>
                         </div>
                     </div>
-                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm">
+                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm transition-all duration-300"
+                        :class="{'ring-2 ring-secondary-orange shadow-lg': isOpen}">
                         <h3>
-                            <button @click="isOpen = !isOpen" class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue" :aria-expanded="isOpen">
+                            <button @click="isOpen = !isOpen"
+                                class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue"
+                                :aria-expanded="isOpen">
                                 <span>What exactly is "Full Truck Load" (FTL)?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300" :class="{'rotate-180': isOpen}"></i>
+                                <i class="fas fa-chevron-down transition-transform duration-300"
+                                    :class="{'rotate-180': isOpen}"></i>
                             </button>
                         </h3>
-                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2">
+                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-200"
+                            x-transition:leave-start="opacity-100 translate-y-0"
+                            x-transition:leave-end="opacity-0 -translate-y-2">
                             <div class="p-5 pt-0 text-gray-600">
                                 <p>FTL means your cargo, and only your cargo, is on the truck. No co-loading.</p>
                                 <ul class="list-disc list-inside mt-2 space-y-1">
@@ -614,28 +857,48 @@
                             </div>
                         </div>
                     </div>
-                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm">
+                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm transition-all duration-300"
+                        :class="{'ring-2 ring-secondary-orange shadow-lg': isOpen}">
                         <h3>
-                            <button @click="isOpen = !isOpen" class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue" :aria-expanded="isOpen">
+                            <button @click="isOpen = !isOpen"
+                                class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue"
+                                :aria-expanded="isOpen">
                                 <span>Who loads/unloads the truck?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300" :class="{'rotate-180': isOpen}"></i>
+                                <i class="fas fa-chevron-down transition-transform duration-300"
+                                    :class="{'rotate-180': isOpen}"></i>
                             </button>
                         </h3>
-                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2">
+                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-200"
+                            x-transition:leave-start="opacity-100 translate-y-0"
+                            x-transition:leave-end="opacity-0 -translate-y-2">
                             <div class="p-5 pt-0 text-gray-600">
-                                <p>Maschem Freight provides the haulage service: the truck and a trained, professional driver.</p>
-                                <p class="mt-2">Loading and unloading is typically handled by the client at collection and delivery points.</p>
+                                <p>Mas Freight provides the haulage service: the truck and a trained, professional
+                                    driver.</p>
+                                <p class="mt-2">Loading and unloading is typically handled by the client at collection
+                                    and delivery points.</p>
                             </div>
                         </div>
                     </div>
-                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm">
+                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm transition-all duration-300"
+                        :class="{'ring-2 ring-secondary-orange shadow-lg': isOpen}">
                         <h3>
-                            <button @click="isOpen = !isOpen" class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue" :aria-expanded="isOpen">
+                            <button @click="isOpen = !isOpen"
+                                class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue"
+                                :aria-expanded="isOpen">
                                 <span>What are your payment terms?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300" :class="{'rotate-180': isOpen}"></i>
+                                <i class="fas fa-chevron-down transition-transform duration-300"
+                                    :class="{'rotate-180': isOpen}"></i>
                             </button>
                         </h3>
-                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2">
+                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-200"
+                            x-transition:leave-start="opacity-100 translate-y-0"
+                            x-transition:leave-end="opacity-0 -translate-y-2">
                             <div class="p-5 pt-0 text-gray-600">
                                 <ul class="list-disc list-inside space-y-1">
                                     <li>First-time clients: Prepaid before loading.</li>
@@ -644,31 +907,78 @@
                             </div>
                         </div>
                     </div>
-                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm">
+                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm transition-all duration-300"
+                        :class="{'ring-2 ring-secondary-orange shadow-lg': isOpen}">
                         <h3>
-                            <button @click="isOpen = !isOpen" class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue" :aria-expanded="isOpen">
+                            <button @click="isOpen = !isOpen"
+                                class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue"
+                                :aria-expanded="isOpen">
                                 <span>Is my cargo safe and insured?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300" :class="{'rotate-180': isOpen}"></i>
+                                <i class="fas fa-chevron-down transition-transform duration-300"
+                                    :class="{'rotate-180': isOpen}"></i>
                             </button>
                         </h3>
-                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2">
+                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-200"
+                            x-transition:leave-start="opacity-100 translate-y-0"
+                            x-transition:leave-end="opacity-0 -translate-y-2">
                             <div class="p-5 pt-0 text-gray-600">
-                                <p>Our safety record speaks for itself. We're fully insured as legally required in all countries of operation.</p>
-                                <p class="mt-2">Clients are welcome to arrange additional Goods in Transit (GIT) insurance at their own cost if desired.</p>
+                                <p>Our safety record speaks for itself. We're fully insured as legally required in all
+                                    countries of operation.</p>
+                                <p class="mt-2">Clients are welcome to arrange additional Goods in Transit (GIT)
+                                    insurance at their own cost if desired.</p>
                             </div>
                         </div>
                     </div>
-                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm">
+                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm transition-all duration-300"
+                        :class="{'ring-2 ring-secondary-orange shadow-lg': isOpen}">
                         <h3>
-                            <button @click="isOpen = !isOpen" class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue" :aria-expanded="isOpen">
+                            <button @click="isOpen = !isOpen"
+                                class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue"
+                                :aria-expanded="isOpen">
                                 <span>Do you charge for collection?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300" :class="{'rotate-180': isOpen}"></i>
+                                <i class="fas fa-chevron-down transition-transform duration-300"
+                                    :class="{'rotate-180': isOpen}"></i>
                             </button>
                         </h3>
-                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2">
+                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-200"
+                            x-transition:leave-start="opacity-100 translate-y-0"
+                            x-transition:leave-end="opacity-0 -translate-y-2">
                             <div class="p-5 pt-0 text-gray-600">
-                                <p>Our trucks depart from Isando (Johannesburg, SA) or Harare (Zimbabwe).</p>
-                                <p class="mt-2">Free collection within a 50km radius of these depots. Standard rates apply beyond that.</p>
+                                <p>Our trucks depart from Boksburg (Johannesburg, SA) or Harare (Zimbabwe).</p>
+                                <p class="mt-2">Free collection within a 50km radius of these depots. Standard rates
+                                    apply beyond that.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-data="{ isOpen: false }" class="bg-white rounded-lg shadow-sm transition-all duration-300"
+                        :class="{'ring-2 ring-secondary-orange shadow-lg': isOpen}">
+                        <h3>
+                            <button @click="isOpen = !isOpen"
+                                class="flex justify-between items-center w-full text-left p-5 font-sans font-semibold text-primary-blue"
+                                :aria-expanded="isOpen">
+                                <span>Which countries do you cover for Import and Export?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"
+                                    :class="{'rotate-180': isOpen}"></i>
+                            </button>
+                        </h3>
+                        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-200"
+                            x-transition:leave-start="opacity-100 translate-y-0"
+                            x-transition:leave-end="opacity-0 -translate-y-2">
+                            <div class="p-5 pt-0 text-gray-600">
+                                <p>We specialize in full truck load (FTL) flows between <strong>South Africa, Zimbabwe,
+                                        Zambia, and Malawi</strong>.</p>
+                                <p class="mt-2 text-sm italic">Whether you are importing minerals to SA or exporting
+                                    mining chemicals to the Copperbelt, we provide a direct, unbroken chain of custody.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -677,180 +987,239 @@
         </section>
 
     </main>
-    
+
     <!-- FOOTER (Reusable Component) -->
     <footer id="contact" class="bg-primary-dark text-gray-400 py-16">
-    <div class="container mx-auto px-6 sm:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 md:text-left">
-            <!-- Column 1: Brand -->
-            <div>
-                <h4 class="font-sans text-xl font-bold text-white mb-2">MAS<span class="text-secondary-orange">Chem</span>Freight</h4>
-                <p class="text-sm">Specialist Cross-Border FTL. Predictable Timelines. Budget Certainty.</p>
-            </div>
-
-            <!-- Column 2: Solutions (Organized Links) -->
-            <div class="grid grid-cols-2 gap-8 md:col-span-1 lg:col-span-1">
+        <div class="container mx-auto px-6 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 md:text-left">
+                <!-- Column 1: Brand -->
                 <div>
-                    <h4 class="font-sans font-bold text-white mb-4">Cargo Types</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/dedicated-hazchem-freight.html" class="hover:text-secondary-orange">Hazchem Freight</a></li>
-                        <li><a href="/general-cargo-ftl-freight.html" class="hover:text-secondary-orange">General Cargo</a></li>
-                    </ul>
-
-                    <h4 class="font-sans font-bold text-white mb-4 mt-6">Destinations</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/cross-border-freight-zimbabwe.html" class="hover:text-secondary-orange">Zimbabwe</a></li>
-                        <li><a href="/cross-border-freight-zambia.html" class="hover:text-secondary-orange">Zambia</a></li>
-                        <li><a href="/cross-border-freight-malawi.html" class="hover:text-secondary-orange">Malawi</a></li>
-                    </ul>
+                    <h4 class="font-sans text-xl font-bold text-white mb-2">Mas<span class="text-secondary-orange">
+                            Freight</span></h4>
+                    <p class="text-sm">Specialist Cross-Border FTL. Predictable Timelines. Budget Certainty.</p>
                 </div>
-                <div>
-                    <h4 class="font-sans font-bold text-white mb-4">Industries</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/mining-industrial-chemical-transport.html" class="hover:text-secondary-orange">Mining</a></li>
-                        <li><a href="/agricultural-farming-logistics.html" class="hover:text-secondary-orange">Agriculture</a></li>
-                        <li><a href="/construction-manufacturing-freight.html" class="hover:text-secondary-orange">Construction</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Column 3: Contact Details -->
-            <div class="md:col-span-2 lg:col-span-2">
-                <h4 class="font-sans font-bold text-white mb-4">Contact Us</h4>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm">
+    
+                <!-- Column 2: Solutions (Organized Links) -->
+                <div class="grid grid-cols-2 gap-8 md:col-span-1 lg:col-span-1">
                     <div>
-                        <h5 class="font-bold text-white mb-2">South Africa</h5>
-                        <ul class="space-y-2">
-                            <li class="flex items-start"><i class="fas fa-map-marker-alt fa-fw mr-2 mt-1"></i><span>183 Leith Road Boksburg, Gauteng</span></li>
-                            <li class="flex items-center"><i class="fas fa-phone fa-fw mr-2"></i><span>+27 11 974 9222</span></li>
-                            <li class="flex items-center"><i class="fas fa-envelope fa-fw mr-2"></i><span>mkuguyo@maschemfreight.co.za</span></li>
-                            <li class="flex items-center"><i class="fas fa-mobile-alt fa-fw mr-2"></i><span>+27 82 888 6504 (Masa Kuguyo)</span></li>
+                        <h4 class="font-sans font-bold text-white mb-4">Cargo Types</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="/dedicated-hazchem-freight.html" class="hover:text-secondary-orange">Hazchem
+                                    Freight</a></li>
+                            <li><a href="/general-cargo-ftl-freight.html" class="hover:text-secondary-orange">General
+                                    Cargo</a></li>
+                            <li><a href="/import-export.html" class="hover:text-secondary-orange">Import / Export Goods</a>
+                            </li>
+                        </ul>
+    
+                        <h4 class="font-sans font-bold text-white mb-4 mt-6">Destinations</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="/cross-border-freight-zimbabwe.html"
+                                    class="hover:text-secondary-orange">Zimbabwe</a></li>
+                            <li><a href="/cross-border-freight-zambia.html" class="hover:text-secondary-orange">Zambia</a>
+                            </li>
+                            <li><a href="/cross-border-freight-malawi.html" class="hover:text-secondary-orange">Malawi</a>
+                            </li>
                         </ul>
                     </div>
                     <div>
-                        <h5 class="font-bold text-white mb-2">Zimbabwe</h5>
-                        <ul class="space-y-2">
-                            <li class="flex items-start"><i class="fas fa-map-marker-alt fa-fw mr-2 mt-1"></i><span>24 Conald Road, Graniteside, Harare</span></li>
-                            <li class="flex items-center"><i class="fas fa-phone fa-fw mr-2"></i><span>+263 4 756026</span></li>
-                            <li class="flex items-center"><i class="fas fa-envelope fa-fw mr-2"></i><span>cnyamayaro@maschemfreight.co.za</span></li>
-                            <li class="flex items-center"><i class="fas fa-mobile-alt fa-fw mr-2"></i><span>+263 772 878505 (C. Nyamayaro)</span></li>
+                        <h4 class="font-sans font-bold text-white mb-4">Industries</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="/mining-industrial-chemical-transport.html"
+                                    class="hover:text-secondary-orange">Mining</a></li>
+                            <li><a href="/agricultural-farming-logistics.html"
+                                    class="hover:text-secondary-orange">Agriculture</a></li>
+                            <li><a href="/construction-manufacturing-freight.html"
+                                    class="hover:text-secondary-orange">Construction</a></li>
+                        </ul>
+                        <h4 class="font-sans font-bold text-white mb-4 mt-6">Quick Links</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="/contact.html" class="hover:text-secondary-orange">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
+    
+                <!-- Column 3: Contact Details -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <h4 class="font-sans font-bold text-white mb-4">Contact Us</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm">
+                        <div>
+                            <h5 class="font-bold text-white mb-2">South Africa</h5>
+                            <ul class="space-y-2">
+                                <li class="flex items-start"><i class="fas fa-map-marker-alt fa-fw mr-2 mt-1"></i><span>183
+                                        Leith Road Boksburg, Gauteng</span></li>
+                                <li class="flex items-center"><i class="fas fa-phone fa-fw mr-2"></i><span>+27 11 974
+                                        9222</span></li>
+                                <li class="flex items-center"><i
+                                        class="fas fa-envelope fa-fw mr-2"></i><span>mkuguyo@masfreight.co.za</span>
+                                </li>
+                                <li class="flex items-center"><i class="fas fa-mobile-alt fa-fw mr-2"></i><span>+27 82 888
+                                        6504 (Masa Kuguyo)</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-white mb-2">Zimbabwe</h5>
+                            <ul class="space-y-2">
+                                <li class="flex items-start"><i class="fas fa-map-marker-alt fa-fw mr-2 mt-1"></i><span>24
+                                        Conald Road, Graniteside, Harare</span></li>
+                                <li class="flex items-center"><i class="fas fa-phone fa-fw mr-2"></i><span>+263 4
+                                        756026</span></li>
+                                <li class="flex items-center"><i
+                                        class="fas fa-envelope fa-fw mr-2"></i><span>cnyamayaro@masfreight.co.za</span>
+                                </li>
+                                <li class="flex items-center"><i class="fas fa-mobile-alt fa-fw mr-2"></i><span>+263 772
+                                        878505 (C. Nyamayaro)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; <span x-data x-text="new Date().getFullYear()"></span> Mas Freight. All Rights Reserved.</p>
             </div>
         </div>
-        <div class="border-t border-gray-700 pt-8 text-center text-sm">
-            <p>&copy; <span x-data x-text="new Date().getFullYear()"></span> Maschem Freight. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
-       
+    </footer>
 
     <!-- MODAL (Reusable Component) -->
-    <div x-show="$store.modal.isOpen" x-trap.noscroll="$store.modal.isOpen" @keydown.escape.window="$store.modal.close()" class="fixed inset-0 bg-primary-blue bg-opacity-75 z-50 flex items-center justify-center p-4" x-cloak>
-    <div @click.outside="$store.modal.close()" class="bg-white rounded-lg shadow-xl w-full max-w-lg" 
-         x-show="$store.modal.isOpen" 
-         x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" 
-         x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
-        
-        <div class="p-6 md:p-8 relative">
-            <button @click="$store.modal.close()" aria-label="Close modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-3xl leading-none">&times;</button>
-            
-            <!-- FORM VIEW -->
-            <div x-show="!$store.modal.isSuccess">
-                <h3 class="font-sans text-2xl font-bold text-primary-blue mb-2">Get My Certainty Quote</h3>
-                <p class="text-gray-600 mb-8">Start the process below. A secure link to continue will be sent to your email.</p>
-                
-                <form id="quote-form" @submit.prevent="$store.modal.submitForm()" class="space-y-6">
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <!-- Full Name -->
-                        <div class="relative">
-                            <input type="text" id="modal-name" name="name" required class="form-input-live peer" placeholder=" " />
-                            <label for="modal-name" class="form-label-live">Full Name</label>
-                        </div>
-                        <!-- Email Address -->
-                        <div class="relative">
-                            <input type="email" id="modal-email" name="email" required class="form-input-live peer" placeholder=" " />
-                            <label for="modal-email" class="form-label-live">Email Address</label>
-                        </div>
-                    </div>
-                    <!-- Destination -->
-                    <div class="relative">
-                        <select id="modal-destination" name="country" required class="form-input-live peer">
-                            <option value=""></option>
-                            <option value="zimbabwe">Zimbabwe</option>
-                            <option value="zambia">Zambia</option>
-                            <option value="malawi">Malawi</option>
-                        </select>
-                        <label for="modal-destination" class="form-label-live">Destination Country</label>
-                    </div>
-                    
-                    <!-- Required Delivery Date (with Smart Positioning) -->
-                    <div x-data="datepicker(null)" @click.outside="isOpen = false" class="relative">
-                        <input type="hidden" name="delivery_date" x-model="selectedDate">
-                        <div class="relative">
-                            <input @click="isOpen = !isOpen; repositionCalendar()" type="text" id="modal-delivery-date" readonly :value="formatDate(selectedDate)" class="form-input-live peer cursor-pointer" placeholder=" " />
-                            <label for="modal-delivery-date" class="form-label-live">Required Delivery Date</label>
-                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"><i class="fas fa-calendar-alt text-gray-400"></i></div>
-                        </div>
-                        
-                        <div x-ref="calendarContainer" x-show="isOpen" x-transition class="datepicker-container">
-                            <div class="flex justify-between items-center mb-2">
-                                <button type="button" @click="prevMonth()" class="p-2 rounded-full hover:bg-gray-100"><i class="fas fa-chevron-left fa-sm text-gray-600"></i></button>
-                                <div class="font-semibold text-primary-blue" x-text="`${monthNames[month]} ${year}`"></div>
-                                <button type="button" @click="nextMonth()" class="p-2 rounded-full hover:bg-gray-100"><i class="fas fa-chevron-right fa-sm text-gray-600"></i></button>
+    <!-- MODAL (Reusable Component) -->
+    <div x-show="$store.modal.isOpen" x-trap.noscroll="$store.modal.isOpen" @keydown.escape.window="$store.modal.close()"
+        class="fixed inset-0 bg-primary-blue bg-opacity-75 z-50 flex items-center justify-center p-4" x-cloak>
+        <div @click.outside="$store.modal.close()" class="bg-white rounded-lg shadow-xl w-full max-w-lg"
+            x-show="$store.modal.isOpen" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-90">
+    
+            <div class="p-6 md:p-8 relative">
+                <button @click="$store.modal.close()" aria-label="Close modal"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-3xl leading-none">&times;</button>
+    
+                <!-- FORM VIEW -->
+                <div x-show="!$store.modal.isSuccess">
+                    <h3 class="font-sans text-2xl font-bold text-primary-blue mb-2">Get My Certainty Quote</h3>
+                    <p class="text-gray-600 mb-8">Start the process below. A secure link to continue will be sent to your
+                        email.</p>
+    
+                    <form id="quote-form" @submit.prevent="$store.modal.submitForm()" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <!-- Full Name -->
+                            <div class="relative">
+                                <input type="text" id="modal-name" name="name" required class="form-input-live peer"
+                                    placeholder=" " />
+                                <label for="modal-name" class="form-label-live">Full Name</label>
                             </div>
-                            <div class="grid grid-cols-7 gap-1 text-center text-sm">
-                                <template x-for="day in dayLabels"><div class="font-medium text-gray-500" x-text="day"></div></template>
-                                <template x-for="blank in blankDays"><div></div></template>
-                                <template x-for="day in daysInMonth">
-                                    <button type="button" @click="selectDate(day)" class="h-9 w-9 flex items-center justify-center rounded-full" :class="{'bg-secondary-orange text-white': isSelected(day), 'hover:bg-gray-100': !isSelected(day) && !isToday(day), 'text-primary-blue font-bold': isToday(day) && !isSelected(day)}" x-text="day"></button>
-                                </template>
+                            <!-- Email Address -->
+                            <div class="relative">
+                                <input type="email" id="modal-email" name="email" required class="form-input-live peer"
+                                    placeholder=" " />
+                                <label for="modal-email" class="form-label-live">Email Address</label>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Hazchem Checkbox -->
-                    <div class="flex items-center pt-2"><input id="modal-hazchem" name="is_hazchem" type="checkbox" value="true" class="h-5 w-5 text-secondary-orange rounded border-gray-300 focus:ring-secondary-orange"><label for="modal-hazchem" class="ml-3 block text-base text-gray-700">This is a hazardous materials shipment</label></div>
-                    
-                    <button type="submit" class="w-full btn-primary" :disabled="$store.modal.isLoading">
-                        <span x-show="!$store.modal.isLoading" class="flex items-center justify-center gap-2"><span>Start My Quote</span><i class="fas fa-arrow-right fa-sm"></i></span>
-                        <span x-show="$store.modal.isLoading" class="flex items-center justify-center"><i class="fas fa-spinner fa-spin mr-2"></i> Generating Secure Link...</span>
-                    </button>
-                </form>
-            </div>
-
-            <!-- SUCCESS & CONFIRMATION VIEW -->
-            <div x-show="$store.modal.isSuccess" class="text-center py-4">
-                <i class="fas fa-envelope-circle-check text-5xl text-green-500 mb-4"></i>
-                <h3 class="font-sans text-2xl font-bold text-primary-blue">Link Sent to Your Inbox!</h3>
-                <p class="text-gray-600 mt-2 mb-6">A secure link to continue your quote has been sent to your email. You can complete it now, or finish it later at your convenience.</p>
-                
-                <div class="text-left bg-light-grey p-4 rounded-lg">
-                    <h4 class="font-bold text-primary-blue mb-2">To complete your quote, you will need:</h4>
-                    <ul class="space-y-1.5 text-sm text-gray-700">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-secondary-orange"></i> Cargo Weight & Product Description</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-secondary-orange"></i> Collection & Delivery Address(es)</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-secondary-orange"></i> Your Contact Phone Number</li>
-                    </ul>
+                        <!-- Destination -->
+                        <div class="relative">
+                            <select id="modal-destination" name="country" required class="form-input-live peer">
+                                <option value=""></option>
+                                <option value="zimbabwe">Zimbabwe</option>
+                                <option value="zambia">Zambia</option>
+                                <option value="malawi">Malawi</option>
+                            </select>
+                            <label for="modal-destination" class="form-label-live">Destination Country</label>
+                        </div>
+    
+                        <!-- Required Delivery Date (with Smart Positioning) -->
+                        <div x-data="datepicker(null)" @click.outside="isOpen = false" class="relative">
+                            <input type="hidden" name="delivery_date" x-model="selectedDate">
+                            <div class="relative">
+                                <input @click="isOpen = !isOpen; repositionCalendar()" type="text" id="modal-delivery-date"
+                                    readonly :value="formatDate(selectedDate)" class="form-input-live peer cursor-pointer"
+                                    placeholder=" " />
+                                <label for="modal-delivery-date" class="form-label-live">Required Delivery Date</label>
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"><i
+                                        class="fas fa-calendar-alt text-gray-400"></i></div>
+                            </div>
+    
+                            <div x-ref="calendarContainer" x-show="isOpen" x-transition class="datepicker-container">
+                                <div class="flex justify-between items-center mb-2">
+                                    <button type="button" @click="prevMonth()" class="p-2 rounded-full hover:bg-gray-100"><i
+                                            class="fas fa-chevron-left fa-sm text-gray-600"></i></button>
+                                    <div class="font-semibold text-primary-blue" x-text="`${monthNames[month]} ${year}`">
+                                    </div>
+                                    <button type="button" @click="nextMonth()" class="p-2 rounded-full hover:bg-gray-100"><i
+                                            class="fas fa-chevron-right fa-sm text-gray-600"></i></button>
+                                </div>
+                                <div class="grid grid-cols-7 gap-1 text-center text-sm">
+                                    <template x-for="day in dayLabels">
+                                        <div class="font-medium text-gray-500" x-text="day"></div>
+                                    </template>
+                                    <template x-for="blank in blankDays">
+                                        <div></div>
+                                    </template>
+                                    <template x-for="day in daysInMonth">
+                                        <button type="button" @click="selectDate(day)"
+                                            class="h-9 w-9 flex items-center justify-center rounded-full"
+                                            :class="{'bg-secondary-orange text-white': isSelected(day), 'hover:bg-gray-100': !isSelected(day) && !isToday(day), 'text-primary-blue font-bold': isToday(day) && !isSelected(day)}"
+                                            x-text="day"></button>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Hazchem Checkbox -->
+                        <div class="flex items-center pt-2"><input id="modal-hazchem" name="is_hazchem" type="checkbox"
+                                value="true"
+                                class="h-5 w-5 text-secondary-orange rounded border-gray-300 focus:ring-secondary-orange"><label
+                                for="modal-hazchem" class="ml-3 block text-base text-gray-700">This is a hazardous materials
+                                shipment</label></div>
+    
+                        <button type="submit" class="w-full btn-primary" :disabled="$store.modal.isLoading">
+                            <span x-show="!$store.modal.isLoading"
+                                class="flex items-center justify-center gap-2"><span>Start My Quote</span><i
+                                    class="fas fa-arrow-right fa-sm"></i></span>
+                            <span x-show="$store.modal.isLoading" class="flex items-center justify-center"><i
+                                    class="fas fa-spinner fa-spin mr-2"></i> Generating Secure Link...</span>
+                        </button>
+                    </form>
                 </div>
-
-                <div class="mt-8 flex flex-col sm:flex-row gap-4">
-                    <button @click="$store.modal.continueToQuote()" class="btn-primary w-full">
-                        <i class="fa-solid fa-circle-arrow-right mr-2"></i> Continue Now
-                    </button>
-                    <button @click="$store.modal.close()" class="btn-secondary w-full">
-                        Close
-                    </button>
+    
+                <!-- SUCCESS & CONFIRMATION VIEW -->
+                <div x-show="$store.modal.isSuccess" class="text-center py-4">
+                    <i class="fas fa-envelope-circle-check text-5xl text-green-500 mb-4"></i>
+                    <h3 class="font-sans text-2xl font-bold text-primary-blue">Link Sent to Your Inbox!</h3>
+                    <p class="text-gray-600 mt-2 mb-6">A secure link to continue your quote has been sent to your email. You
+                        can complete it now, or finish it later at your convenience.</p>
+    
+                    <div class="text-left bg-light-grey p-4 rounded-lg">
+                        <h4 class="font-bold text-primary-blue mb-2">To complete your quote, you will need:</h4>
+                        <ul class="space-y-1.5 text-sm text-gray-700">
+                            <li class="flex items-center gap-2"><i
+                                    class="fa-solid fa-check-circle text-secondary-orange"></i> Cargo Weight & Product
+                                Description</li>
+                            <li class="flex items-center gap-2"><i
+                                    class="fa-solid fa-check-circle text-secondary-orange"></i> Collection & Delivery
+                                Address(es)</li>
+                            <li class="flex items-center gap-2"><i
+                                    class="fa-solid fa-check-circle text-secondary-orange"></i> Your Contact Phone Number
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <button @click="$store.modal.continueToQuote()" class="btn-primary w-full">
+                            <i class="fa-solid fa-circle-arrow-right mr-2"></i> Continue Now
+                        </button>
+                        <button @click="$store.modal.close()" class="btn-secondary w-full">
+                            Close
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
     
     <!-- STICKY CTA (Reusable Component) -->
-    <button @click="$store.modal.open()" class="fixed bottom-6 right-6 bg-secondary-orange text-white font-sans font-bold py-3 px-5 rounded-full shadow-lg hover:bg-orange-600 transition-all transform hover:scale-110 z-30 flex items-center gap-2">
+    <button @click="$store.modal.open()"
+        class="fixed bottom-6 right-6 bg-secondary-orange text-white font-sans font-bold py-3 px-5 rounded-full shadow-lg hover:bg-orange-600 transition-all transform hover:scale-110 z-30 flex items-center gap-2">
         <i class="fas fa-comment-dots"></i><span class="hidden sm:inline">Get My Certainty Quote</span>
-    </button>
-</body>
+    </button></body>
+
 </html>
