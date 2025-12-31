@@ -56,7 +56,7 @@ const getInitialQuoteData = () => {
 
 // --- ALPINE.JS INITIALIZATION ---
 document.addEventListener('alpine:init', () => {
-    
+
     Alpine.data('globalState', () => ({
         init() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -73,9 +73,9 @@ document.addEventListener('alpine:init', () => {
             notification_preference: 'Email Only', quote_id: '', quote_reference_name: ''
         }
     });
-    
+
     Alpine.store('modal', {
-        isOpen: false, isLoading: false, isSuccess: false, continueUrl: '', 
+        isOpen: false, isLoading: false, isSuccess: false, continueUrl: '',
         open() { this.isOpen = true; this.isSuccess = false; this.isLoading = false; },
         close() { this.isOpen = false; },
         async submitForm() {
@@ -102,35 +102,35 @@ document.addEventListener('alpine:init', () => {
         },
         continueToQuote() { if (this.continueUrl) { window.location.href = this.continueUrl; } }
     });
-    
+
     Alpine.data('datepicker', (dispatch, initialDate = '') => ({
         isOpen: false, selectedDate: initialDate, month: '', year: '', daysInMonth: [], blankDays: [],
         monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-        dayLabels: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],_dispatch: dispatch,
+        dayLabels: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'], _dispatch: dispatch,
         init() {
             let dateToUse;
             if (this.selectedDate) { const parts = this.selectedDate.split('-'); if (parts.length === 3) { const baseDate = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2])); if (!isNaN(baseDate.getTime())) { dateToUse = baseDate; } } }
-            if (dateToUse) { this.month = dateToUse.getUTCMonth(); this.year = dateToUse.getUTCFullYear(); } 
+            if (dateToUse) { this.month = dateToUse.getUTCMonth(); this.year = dateToUse.getUTCFullYear(); }
             else { const today = new Date(); this.month = today.getMonth(); this.year = today.getFullYear(); this.selectedDate = ''; }
             this.getDaysInMonth();
         },
         repositionCalendar() { this.$nextTick(() => { const container = this.$refs.calendarContainer; if (!container || !this.isOpen) return; const rect = container.getBoundingClientRect(); if (rect.bottom > window.innerHeight) { container.classList.add('datepicker-above'); } else { container.classList.remove('datepicker-above'); } }); },
         getDaysInMonth() { const days = new Date(this.year, this.month + 1, 0).getDate(); const firstDay = new Date(this.year, this.month, 1).getDay(); this.blankDays = Array.from({ length: firstDay }); this.daysInMonth = Array.from({ length: days }, (_, i) => i + 1); },
-        selectDate(day) { this.selectedDate = `${this.year}-${String(this.month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`; if(this._dispatch) { this._dispatch('date-selected', { date: this.selectedDate }); } this.isOpen = false; },
+        selectDate(day) { this.selectedDate = `${this.year}-${String(this.month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`; if (this._dispatch) { this._dispatch('date-selected', { date: this.selectedDate }); } this.isOpen = false; },
         formatDate(isoDate) { if (!isoDate) return ''; const parts = isoDate.split('-'); if (parts.length !== 3) return ''; const date = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2])); return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }); },
         prevMonth() { if (this.month === 0) { this.month = 11; this.year--; } else { this.month--; } this.getDaysInMonth(); },
         nextMonth() { if (this.month === 11) { this.month = 0; this.year++; } else { this.month++; } this.getDaysInMonth(); },
-        isSelected(day) { if(!this.selectedDate) return false; const d = new Date(Date.UTC(this.year, this.month, day)); return this.selectedDate === `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}-${String(d.getUTCDate()).padStart(2, '0')}`; },
+        isSelected(day) { if (!this.selectedDate) return false; const d = new Date(Date.UTC(this.year, this.month, day)); return this.selectedDate === `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}-${String(d.getUTCDate()).padStart(2, '0')}`; },
         isToday(day) { const today = new Date(); const d = new Date(this.year, this.month, day); return today.toDateString() === d.toDateString(); }
     }));
-    
+
     Alpine.data('googleAddressInput', (dispatch, fieldName, index = -1) => ({
         mode: 'search',
         init() {
             this.$nextTick(() => { this.initializeAutocomplete(); });
             this.$watch('$store.quoteForm.dataLoaded', (isLoaded) => {
                 const addressValue = (index > -1) ? this.$store.quoteForm.quoteData[fieldName][index] : this.$store.quoteForm.quoteData[fieldName];
-                if(isLoaded && addressValue) { this.mode = 'manual'; }
+                if (isLoaded && addressValue) { this.mode = 'manual'; }
             });
         },
         initializeAutocomplete() {
@@ -141,7 +141,7 @@ document.addEventListener('alpine:init', () => {
         },
         setupAutocomplete() {
             const inputElement = this.$refs.autocompleteInput; if (!inputElement) return;
-            const autocomplete = new google.maps.places.Autocomplete(inputElement, { fields: ["formatted_address"], componentRestrictions: { country: ["za", "zw", "zm", "mw"] }});
+            const autocomplete = new google.maps.places.Autocomplete(inputElement, { fields: ["formatted_address"], componentRestrictions: { country: ["za", "zw", "zm", "mw"] } });
             autocomplete.addListener("place_changed", () => {
                 const place = autocomplete.getPlace();
                 if (place.formatted_address) { this.updateParentValue(place.formatted_address); }
@@ -164,13 +164,13 @@ document.addEventListener('alpine:init', () => {
         showSaveSuccessModal: false, collaboratorEmail: '', isSendingInvite: false,
         quoteIdForPrompt: '', quoteRefForPrompt: '', isCollaborator: false, originalSenderName: '', originalSenderEmail: '',
         showSarsModal: false, // <-- NEW STATE FOR v38.0
-        
+
         steps: [
             { id: 1, title: 'Initial Details', icon: 'fa-file-alt' }, { id: 2, title: 'Cargo', icon: 'fa-box-open' },
             { id: 3, title: 'Journey', icon: 'fa-truck-fast' }, { id: 4, title: 'Contact', icon: 'fa-address-card' },
             { id: 5, title: 'Save/Submit', icon: 'fa-check-double' }
         ],
-        
+
         get previousStepData() { if (this.step <= 1) return null; return this.steps.find(s => s.id === this.step - 1); },
         get currentStepData() { return this.steps.find(s => s.id === this.step); },
         get nextStepData() { if (this.step >= this.totalSteps) return null; return this.steps.find(s => s.id === this.step + 1); },
@@ -179,7 +179,7 @@ document.addEventListener('alpine:init', () => {
         init() {
             this.summaryHtml = this.$refs.summaryTemplate.innerHTML;
             this.$nextTick(() => {
-                const savedData = localStorage.getItem('maschemQuoteInProgress');
+                const savedData = localStorage.getItem('masFreightQuoteInProgress');
                 const urlParams = new URLSearchParams(window.location.search);
                 if (savedData && !urlParams.has('data') && !urlParams.has('name') && !urlParams.has('quote_id')) {
                     const parsed = JSON.parse(savedData);
@@ -189,7 +189,7 @@ document.addEventListener('alpine:init', () => {
             });
             this.$watch('$store.quoteForm.quoteData', () => this.saveProgress(), { deep: true });
             this.$watch('$store.quoteForm.quoteData.is_multipoint', (newValue) => { if (newValue === 'Single Stop') { this.$store.quoteForm.quoteData.delivery_addresses = ['']; } else if (this.$store.quoteForm.quoteData.delivery_addresses.length < 2) { this.$store.quoteForm.quoteData.delivery_addresses = ['', '']; } });
-            this.$watch('$store.quoteForm.quoteData.cell_local_number', (newValue) => { if (!newValue) { this.$store.quoteForm.quoteData.notification_preference = 'Email Only'; }});
+            this.$watch('$store.quoteForm.quoteData.cell_local_number', (newValue) => { if (!newValue) { this.$store.quoteForm.quoteData.notification_preference = 'Email Only'; } });
             const googleMapsKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
             if (googleMapsKey && !window.google) { const script = document.createElement('script'); script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsKey}&libraries=places`; script.async = true; script.defer = true; document.head.appendChild(script); }
         },
@@ -197,15 +197,15 @@ document.addEventListener('alpine:init', () => {
         initializeForm(fromSaved = false) {
             const initialState = getInitialQuoteData();
             if (fromSaved) {
-                const savedState = JSON.parse(localStorage.getItem('maschemQuoteInProgress'));
+                const savedState = JSON.parse(localStorage.getItem('masFreightQuoteInProgress'));
                 this.$store.quoteForm.quoteData = savedState.quoteData;
                 this.isCollaborator = savedState.isCollaborator || false; this.originalSenderEmail = savedState.originalSenderEmail || '';
-                this.originalSenderName = savedState.originalSenderName || ''; this.formPhase = 'form'; this.step = 1; 
+                this.originalSenderName = savedState.originalSenderName || ''; this.formPhase = 'form'; this.step = 1;
             } else {
                 if (initialState.isSharedLink) {
                     this.isCollaborator = true; this.originalSenderName = initialState.quoteData.name;
                     this.originalSenderEmail = initialState.quoteData.email; this.formPhase = 'collaboration';
-                } else if (initialState.quoteData.quote_id) { this.formPhase = 'naming'; } 
+                } else if (initialState.quoteData.quote_id) { this.formPhase = 'naming'; }
                 else { this.formPhase = 'welcome'; }
                 this.$store.quoteForm.quoteData = { ...this.$store.quoteForm.quoteData, ...initialState.quoteData };
             }
@@ -213,9 +213,9 @@ document.addEventListener('alpine:init', () => {
         },
 
         startForm() { this.formPhase = 'form'; this.step = 2; },
-        resumeSession(shouldResume) { this.formPhase = 'loading'; this.$nextTick(() => { if (shouldResume) { this.initializeForm(true); } else { localStorage.removeItem('maschemQuoteInProgress'); this.initializeForm(false); } }); },
-        saveProgress() { if (['form', 'collaboration', 'naming'].includes(this.formPhase)) { const stateToSave = { quoteData: this.$store.quoteForm.quoteData, isCollaborator: this.isCollaborator, originalSenderEmail: this.originalSenderEmail, originalSenderName: this.originalSenderName }; localStorage.setItem('maschemQuoteInProgress', JSON.stringify(stateToSave)); }},
-        
+        resumeSession(shouldResume) { this.formPhase = 'loading'; this.$nextTick(() => { if (shouldResume) { this.initializeForm(true); } else { localStorage.removeItem('masFreightQuoteInProgress'); this.initializeForm(false); } }); },
+        saveProgress() { if (['form', 'collaboration', 'naming'].includes(this.formPhase)) { const stateToSave = { quoteData: this.$store.quoteForm.quoteData, isCollaborator: this.isCollaborator, originalSenderEmail: this.originalSenderEmail, originalSenderName: this.originalSenderName }; localStorage.setItem('masFreightQuoteInProgress', JSON.stringify(stateToSave)); } },
+
         openEditNameModal() { this.tempReferenceName = this.$store.quoteForm.quoteData.quote_reference_name; this.showEditNameModal = true; },
         saveReferenceName() { this.$store.quoteForm.quoteData.quote_reference_name = this.tempReferenceName; this.showEditNameModal = false; },
         openCollaborationModal() { this.collaboratorEmail = ''; this.isSendingInvite = false; this.showCollaborationModal = true; },
@@ -223,15 +223,15 @@ document.addEventListener('alpine:init', () => {
 
         jumpToStep(stepNumber) { this.step = stepNumber; },
         jumpToFirstIncompleteStep() {
-             this.formPhase = 'form';
-             let firstIncomplete = this.steps.find(s => this.isStepIncomplete(s.id));
-             if (firstIncomplete) { this.step = firstIncomplete.id; }
-             else { this.step = this.totalSteps; }
+            this.formPhase = 'form';
+            let firstIncomplete = this.steps.find(s => this.isStepIncomplete(s.id));
+            if (firstIncomplete) { this.step = firstIncomplete.id; }
+            else { this.step = this.totalSteps; }
         },
-        
+
         isStepComplete(stepId) {
             const data = this.$store.quoteForm.quoteData;
-            switch(stepId) {
+            switch (stepId) {
                 case 1: return !!data.is_hazardous && !!data.delivery_deadline_date;
                 case 2: return !!data.product_description;
                 case 3: if (!data.collection_address) return false; return data.delivery_addresses.every(addr => !!addr);
@@ -241,17 +241,17 @@ document.addEventListener('alpine:init', () => {
         },
 
         isStepIncomplete(stepId) { return !this.isStepComplete(stepId); },
-        isQuoteComplete() { for(let i = 1; i < this.totalSteps; i++) { if (this.isStepIncomplete(i)) return false; } return true; },
-        
+        isQuoteComplete() { for (let i = 1; i < this.totalSteps; i++) { if (this.isStepIncomplete(i)) return false; } return true; },
+
         nextStep() { if (this.step < this.totalSteps) this.step++; },
         prevStep() { if (this.step > 1) this.step--; },
-        
+
         _createFullPayload() {
             const data = this.$store.quoteForm.quoteData;
             return {
                 timestamp: new Date().toISOString(), initial_name: data.name, initial_email: data.email, initial_country: data.initial_country,
                 quote_id: data.quote_id, quote_reference_name: data.quote_reference_name, is_hazardous: data.is_hazardous, delivery_deadline_date: data.delivery_deadline_date,
-                is_multipoint: data.is_multipoint, 
+                is_multipoint: data.is_multipoint,
                 company_name: data.company_name, product_description: data.product_description, collection_address: data.collection_address,
                 delivery_addresses: data.delivery_addresses.filter(addr => !!addr),
                 contact_email: data.email,
@@ -288,35 +288,35 @@ document.addEventListener('alpine:init', () => {
             if (await this._sendWebhook(payload)) { this.showCollaborationModal = false; this.showSaveSuccessModal = true; }
             this.isSendingInvite = false;
         },
-        
+
         // --- v38.0 NEW FINAL SUBMISSION FUNCTION ---
         async finalizeSubmission(wantsSarsDocs) {
             this.isSaving = true;
-            
+
             const stateToShare = { quoteData: this.$store.quoteForm.quoteData, isCollaborator: this.isCollaborator, originalSenderEmail: this.originalSenderEmail, originalSenderName: this.originalSenderName };
             const resumeUrl = `${new URL('/quote-refinement.html', window.location.origin).href}?data=${btoa(JSON.stringify(stateToShare))}`;
-            
-            const finalPayload = { 
-                action: 'submit_completed_quote', 
-                completion_timestamp: new Date().toISOString(), 
-                resume_url: resumeUrl, 
+
+            const finalPayload = {
+                action: 'submit_completed_quote',
+                completion_timestamp: new Date().toISOString(),
+                resume_url: resumeUrl,
                 ...this._createFullPayload(),
                 sars_documentation_service: wantsSarsDocs ? 'Yes' : 'No' // Add the new data point
             };
-            
+
             if (await this._sendWebhook(finalPayload)) {
                 this.showSarsModal = false;
                 this.formPhase = 'success';
-                localStorage.removeItem('maschemQuoteInProgress');
+                localStorage.removeItem('masFreightQuoteInProgress');
             }
-            
+
             this.isSaving = false;
         },
-        
+
         formatSummaryDate(isoDate) {
-            if (!isoDate) return ''; 
-            const parts = isoDate.split('-'); if (parts.length !== 3) return ''; 
-            const date = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2])); 
+            if (!isoDate) return '';
+            const parts = isoDate.split('-'); if (parts.length !== 3) return '';
+            const date = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
             return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
         }
     }));

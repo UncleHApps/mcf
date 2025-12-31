@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/MasChemFreight-Favicon.png" />
+
+    <!-- SEO Meta Tags -->
+    <title>Cross-Border Import & Export Freight (Zim, Zam, Mal) | Mas Freight</title>
+    <meta name="description"
+        content="Reliable FTL import and export transport between South Africa, Zimbabwe, Zambia, and Malawi. Specialized logistics for mining, agriculture, and industrial cargo.">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- App Styles & Scripts -->
+    <link rel="stylesheet" href="/css/input.css">
+    <script type="module" src="/js/main.js" defer></script>
+
+    <!-- START: X-CLOAK FIX -->
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    <!-- END: X-CLOAK FIX -->
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LogisticsService",
+      "@id": "https://www.masfreight.co.za/import-export.html#service",
+      "name": "Cross-Border Import & Export Freight",
+      "provider": { "@id": "https://www.masfreight.co.za/#corporation" },
+      "areaServed": [
+        { "@type": "Country", "name": "South Africa" },
+        { "@type": "Country", "name": "Zimbabwe" },
+        { "@type": "Country", "name": "Zambia" },
+        { "@type": "Country", "name": "Malawi" }
+      ],
+      "description": "Professional import and export freight services specializing in full truck load (FTL) transport for mining chemicals, agricultural products, and industrial equipment across Southern Africa.",
+      "url": "https://www.masfreight.co.za/import-export.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.masfreight.co.za/import-export.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.masfreight.co.za"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Import & Export Services",
+          "item": "https://www.masfreight.co.za/import-export.html"
+        }
+      ]
+    }
+  ]
+}  </script>
+</head>
+
+<body class="font-body text-dark-grey antialiased" x-data>
+
+    <!-- HEADER (Reusable Component) -->
+    {{> header }}
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="bg-primary-blue py-24 text-white">
+            <div class="container mx-auto px-6 sm:px-8">
+                <div class="max-w-4xl">
+                    <p class="mb-2 font-semibold text-gray-300"><a href="/index.html"
+                            class="hover:text-secondary-orange transition-colors duration-200">Home</a> / <span
+                            class="text-white">Import & Export</span></p>
+                    <h1 class="font-sans text-4xl md:text-5xl font-bold text-white mb-4">Cross-Border
+                        <span class="text-secondary-orange">Import & Export</span> Specialists
+                    </h1>
+                    <p class="text-lg md:text-xl text-text-light-dim max-w-2xl mb-8">
+                        Experience budget certainty and predictable timelines for your international cargo. We own the
+                        fleet, ensuring an unbroken chain of custody for your most critical shipments.
+                    </p>
+                    <button @click="$store.modal.open()"
+                        class="bg-secondary-orange text-white font-sans font-bold py-3 px-8 rounded-md text-lg hover:bg-orange-600 transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-orange-300">
+                        Get My Certainty Quote
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- VALUE PROPOSITION: RIB LICENSE -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 sm:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="font-sans text-3xl font-bold text-primary-blue mb-6">The RIB License Advantage for
+                            Exporters</h2>
+                        <p class="leading-relaxed mb-6">As a licensed <strong>Remover in Bond (RIB)</strong>, we provide
+                            a significant streamlined advantage for your exports from South Africa. This license allows
+                            us to suspend VAT and duties while your cargo is in transit to the border.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="bg-orange-100 rounded-full h-10 w-10 flex-shrink-0 flex items-center justify-center">
+                                    <i class="fas fa-hand-holding-dollar text-secondary-orange"></i>
+                                </div>
+                                <p><strong>Improved Cash Flow:</strong> No need to pay VAT upfront and wait for SARS
+                                    refunds.</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="bg-orange-100 rounded-full h-10 w-10 flex-shrink-0 flex items-center justify-center">
+                                    <i class="fas fa-shipping-fast text-secondary-orange"></i>
+                                </div>
+                                <p><strong>Operational Speed:</strong> Bonded cargo moves faster through border posts
+                                    like Beitbridge and Chirundu.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-light-grey p-8 rounded-2xl border border-gray-100 shadow-inner">
+                        <img src="/images/Beitbridge-freight-customs.webp"
+                            alt="Efficient customs clearance at Beitbridge"
+                            class="rounded-lg shadow-md mb-4 w-full h-auto">
+                        <p class="text-sm italic text-gray-500 text-center">Mastering the complex customs landscapes of
+                            Southern Africa since 1991.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPORT SERVICES -->
+        <section class="py-16 md:py-24 bg-light-grey">
+            <div class="container mx-auto px-6 sm:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue mb-4">Exporting from South
+                        Africa</h2>
+                    <p class="text-lg text-gray-600">Reliable FTL delivery of South African industrial and agricultural
+                        inputs to the region.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Export Item 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <i class="fas fa-flask text-4xl text-secondary-orange mb-6"></i>
+                        <h3 class="font-sans text-xl font-bold text-primary-blue mb-3">Mining Chemicals (Hazchem)</h3>
+                        <p class="text-gray-600 mb-4">Dedicated transport for critical mining reagents to the Zambian
+                            Copperbelt and Zimbabwe's Great Dyke.</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li><i class="fas fa-check text-secondary-orange mr-2"></i>Full SQAS Compliance</li>
+                            <li><i class="fas fa-check text-secondary-orange mr-2"></i>Trained Hazchem Drivers</li>
+                        </ul>
+                    </div>
+                    <!-- Export Item 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <i class="fas fa-seedling text-4xl text-secondary-orange mb-6"></i>
+                        <h3 class="font-sans text-xl font-bold text-primary-blue mb-3">Agricultural Inputs</h3>
+                        <p class="text-gray-600 mb-4">On-time delivery of fertilizers, seeds, and irrigation equipment
+                            for commercial farming seasons.</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li><i class="fas fa-check text-secondary-orange mr-2"></i>Seasonal Priority Scheduling</li>
+                            <li><i class="fas fa-check text-secondary-orange mr-2"></i>Tautliner Weather Protection</li>
+                        </ul>
+                    </div>
+                    <!-- Export Item 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <i class="fas fa-gears text-4xl text-secondary-orange mb-6"></i>
+                        <h3 class="font-sans text-xl font-bold text-primary-blue mb-3">Industrial Machinery</h3>
+                        <p class="text-gray-600 mb-4">Heavy equipment, project cargo, and manufacturing spares delivered
+                            with absolute expert care.</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li><i class="fas fa-check text-secondary-orange mr-2"></i>Flatbed Configuration A</li>
+                            <li><i class="fas fa-check text-secondary-orange mr-2"></i>Direct-to-Site Delivery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPORT SERVICES -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 sm:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue mb-4">Importing to South
+                        Africa</h2>
+                    <p class="text-lg text-gray-600">Bringing the region's mineral wealth and agricultural harvests to
+                        the South African market.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Import Card 1 -->
+                    <div class="group relative overflow-hidden rounded-xl h-64 shadow-lg">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style="background-image: url('/images/zimbabwe-freight-export.webp');"></div>
+                        <div
+                            class="absolute inset-0 bg-primary-blue/60 group-hover:bg-primary-blue/70 transition-colors">
+                        </div>
+                        <div class="absolute inset-0 p-6 flex flex-col justify-end text-white">
+                            <h3 class="font-bold text-xl mb-2">Tobacco & Agri</h3>
+                            <p class="text-sm opacity-90">High-value leaf and produce from Zimbabwe and Malawi.</p>
+                        </div>
+                    </div>
+                    <!-- Import Card 2 -->
+                    <div class="group relative overflow-hidden rounded-xl h-64 shadow-lg">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style="background-image: url('/images/zambia-freight-export.webp');"></div>
+                        <div
+                            class="absolute inset-0 bg-primary-blue/60 group-hover:bg-primary-blue/70 transition-colors">
+                        </div>
+                        <div class="absolute inset-0 p-6 flex flex-col justify-end text-white">
+                            <h3 class="font-bold text-xl mb-2">Copper & Ores</h3>
+                            <p class="text-sm opacity-90">Mineral concentrates from the Zambian Copperbelt.</p>
+                        </div>
+                    </div>
+                    <!-- Import Card 3 -->
+                    <div class="group relative overflow-hidden rounded-xl h-64 shadow-lg">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style="background-image: url('/images/malawi-freight-export.webp');"></div>
+                        <div
+                            class="absolute inset-0 bg-primary-blue/60 group-hover:bg-primary-blue/70 transition-colors">
+                        </div>
+                        <div class="absolute inset-0 p-6 flex flex-col justify-end text-white">
+                            <h3 class="font-bold text-xl mb-2">Agri-Exports</h3>
+                            <p class="text-sm opacity-90">Tea, sugar, and pulses from the Malawian highlands.</p>
+                        </div>
+                    </div>
+                    <!-- Import Card 4 -->
+                    <div class="group relative overflow-hidden rounded-xl h-64 shadow-lg">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style="background-image: url('/images/FMCG-Import-Export.webp');"></div>
+                        <div
+                            class="absolute inset-0 bg-primary-blue/60 group-hover:bg-primary-blue/70 transition-colors">
+                        </div>
+                        <div class="absolute inset-0 p-6 flex flex-col justify-end text-white">
+                            <h3 class="font-bold text-xl mb-2">FMCG Goods</h3>
+                            <p class="text-sm opacity-90">Manufactured goods return-loads for retail stability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FLEET SECTION (Condensed) -->
+        <section class="py-16 md:py-24 bg-light-grey">
+            <div class="container mx-auto px-6 sm:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold font-sans text-primary-blue mb-4">Dedicated 34-Ton
+                        Capacity</h2>
+                    <p class="text-lg text-gray-600">Versatile Superlink configurations for every type of Import/Export
+                        cargo.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-center">
+                        <img src="/images/Flatbed-Config-A.webp" alt="Flatbed Superlink"
+                            class="w-full md:w-1/2 rounded-xl object-cover h-48">
+                        <div>
+                            <h4 class="font-bold text-primary-blue text-xl mb-2">Flatbed Configuration</h4>
+                            <p class="text-sm text-gray-600">Ideal for containers, machinery, and strapped loads.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-center">
+                        <img src="/images/Curtain_side-Config-B.webp" alt="Tautliner Superlink"
+                            class="w-full md:w-1/2 rounded-xl object-cover h-48">
+                        <div>
+                            <h4 class="font-bold text-primary-blue text-xl mb-2">Tautliner Configuration</h4>
+                            <p class="text-sm text-gray-600">Side-loading curtain sides for rapid forklift access and
+                                weather-proofing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="bg-primary-blue py-16 md:py-24 text-white text-center">
+            <div class="container max-w-3xl mx-auto px-6 sm:px-8">
+                <h2 class="font-sans text-3xl md:text-4xl font-bold mb-6">Ready to Streamline Your Import/Export
+                    Logistics?</h2>
+                <p class="text-lg text-blue-100 mb-8">Get the budget certainty and predictable timelines your business
+                    deserves. Experience the Direct-Asset difference today.</p>
+                <button @click="$store.modal.open()"
+                    class="bg-secondary-orange text-white font-sans font-bold py-3 px-10 rounded-md text-xl hover:bg-orange-600 transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-orange-300 shadow-xl">
+                    Get My Certainty Quote
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER (Reusable Component) -->
+    {{> footer }}
+
+    <!-- MODAL (Reusable Component) -->
+    {{> conversion-elements }}
+</body>
+
+</html>

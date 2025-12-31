@@ -24,9 +24,9 @@ export default {
       },
       backgroundImage: {
         // Card Images (Moved from input.css)
-        'mining-card': "url('/images/Mining-Card.webp')",
-        'agri-card': "url('/images/Agri-Card.webp')",
-        'construction-card': "url('/images/Construction-Card.webp')",
+        'mining-card': "url('/images/mining-sector-freight.webp')",
+        'agri-card': "url('/images/agri-sector-freight.webp')",
+        'construction-card': "url('/images/construction-sector-freight.webp')",
 
         // Hero Images (Consolidated)
         'mining-hero': "url('/images/mining-hero.webp')",

@@ -1,16 +1,25 @@
 import { defineConfig } from 'vite';
+import handlebars from 'vite-plugin-handlebars';
+import { resolve } from 'path';
 
 // This is the final, definitive configuration for a custom domain deployment.
 export default defineConfig({
-  base: '/', 
+  base: '/',
 
   server: {
-    https: false, 
+    https: false,
     host: true,
   },
 
+  plugins: [
+    handlebars({
+      partialDirectory: resolve(__dirname, 'src/components'),
+    }),
+  ],
+
   // --- Core Project Configuration ---
   root: 'src',
+  publicDir: '../public',
   // THE FIX IS HERE:
   // This tells both the dev server AND the build process to look one
   // directory up from 'src' to find the .env file.
@@ -31,7 +40,8 @@ export default defineConfig({
         zimbabwe: 'src/cross-border-freight-zimbabwe.html',
         hazchem: 'src/dedicated-hazchem-freight.html',
         general: 'src/general-cargo-ftl-freight.html',
-        mining: 'src/mining-industrial-chemical-transport.html'
+        mining: 'src/mining-industrial-chemical-transport.html',
+        import_export: 'src/import-export.html'
       }
     }
   }
