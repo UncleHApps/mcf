@@ -24,4 +24,7 @@ dist-ssr
 *.sw?
 
 # Ignore environment variables
-.envMCF-Demo.blueprint.json
+.env
+
+# Custom ignores
+MCF-Demo.blueprint.json
