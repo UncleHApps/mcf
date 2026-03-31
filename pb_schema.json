@@ -1,0 +1,460 @@
+[
+    {
+        "name": "contacts",
+        "type": "base",
+        "id": "pbc_contacts_01",
+        "fields": [
+            {
+                "id": "text_qname",
+                "name": "name",
+                "type": "text",
+                "required": true,
+                "min": 0,
+                "max": 0,
+                "pattern": ""
+            },
+            {
+                "id": "email_qemail",
+                "name": "email",
+                "type": "email",
+                "required": true,
+                "exceptDomains": null,
+                "onlyDomains": null
+            },
+            {
+                "id": "text_qphone",
+                "name": "phone",
+                "type": "text",
+                "required": false,
+                "min": 0,
+                "max": 0,
+                "pattern": ""
+            },
+            {
+                "id": "text_qcomp",
+                "name": "company",
+                "type": "text",
+                "required": false,
+                "min": 0,
+                "max": 0,
+                "pattern": ""
+            },
+            {
+                "id": "text_qtype",
+                "name": "type",
+                "type": "text",
+                "required": false,
+                "min": 0,
+                "max": 0,
+                "pattern": ""
+            },
+            {
+                "id": "date_added",
+                "name": "date_added",
+                "type": "date",
+                "required": false,
+                "min": "",
+                "max": ""
+            },
+            {
+                "id": "text_bill_addr",
+                "name": "billing_address",
+                "type": "text",
+                "required": false
+            },
+            {
+                "id": "text_vat",
+                "name": "vat_number",
+                "type": "text",
+                "required": false
+            },
+            {
+                "id": "text_bill_comp",
+                "name": "billing_company_name",
+                "type": "text",
+                "required": false
+            },
+            {
+                "id": "text_s_name",
+                "name": "secondary_contact_name",
+                "type": "text",
+                "required": false
+            },
+            {
+                "id": "text_s_phone",
+                "name": "secondary_contact_phone",
+                "type": "text",
+                "required": false
+            }
+        ],
+        "listRule": "",
+        "viewRule": "",
+        "createRule": "",
+        "updateRule": "",
+        "deleteRule": null,
+        "system": false
+    },
+    {
+        "name": "quotes",
+        "type": "base",
+        "id": "pbc_quotes_01",
+        "fields": [
+            {
+                "id": "text_qref",
+                "name": "quote_ref",
+                "type": "text",
+                "required": true,
+                "min": 0,
+                "max": 0,
+                "pattern": ""
+            },
+            {
+                "id": "rel_qcont",
+                "name": "contact_id",
+                "type": "relation",
+                "collectionId": "pbc_contacts_01",
+                "maxSelect": 1,
+                "cascadeDelete": false
+            },
+            {
+                "id": "text_qstat",
+                "name": "status",
+                "type": "text",
+                "required": false,
+                "min": 0,
+                "max": 0,
+                "pattern": ""
+            },
+            {
+                "id": "text_qdest",
+                "name": "destination",
+                "type": "text",
+                "required": false,
+                "min": 0,
+                "max": 0,
+                "pattern": ""
+            },
+            {
+                "id": "json_qcargo",
+                "name": "cargo_details",
+                "type": "json",
+                "maxSize": 0
+            },
+            {
+                "id": "json_qroute",
+                "name": "route_details",
+                "type": "json",
+                "maxSize": 0
+            },
+            {
+                "id": "num_qprice",
+                "name": "price",
+                "type": "number",
+                "min": null,
+                "max": null,
+                "noDecimal": false
+            },
+            {
+                "id": "text_phase",
+                "name": "submission_phase",
+                "type": "text",
+                "required": false,
+                "min": 0,
+                "max": 0,
+                "pattern": ""
+            },
+            {
+                "id": "date_p1",
+                "name": "phase1_at",
+                "type": "date",
+                "required": false,
+                "min": "",
+                "max": ""
+            },
+            {
+                "id": "date_p2",
+                "name": "phase2_at",
+                "type": "date",
+                "required": false,
+                "min": "",
+                "max": ""
+            },
+            {
+                "id": "bool_sars",
+                "name": "sars_docs",
+                "type": "bool",
+                "required": false
+            },
+            {
+                "id": "text_notif",
+                "name": "notification_preference",
+                "type": "text",
+                "required": false,
+                "min": 0,
+                "max": 0,
+                "pattern": ""
+            },
+            {
+                "id": "rel_vlink",
+                "name": "vehicle_id",
+                "type": "relation",
+                "collectionId": "pbc_vehicles_01",
+                "maxSelect": 1,
+                "cascadeDelete": false
+            },
+            {
+                "id": "json_items",
+                "name": "line_items",
+                "type": "json",
+                "required": false
+            }
+        ],
+        "listRule": "",
+        "viewRule": "",
+        "createRule": "",
+        "updateRule": "",
+        "deleteRule": null,
+        "system": false
+    },
+    {
+        "name": "drivers",
+        "type": "base",
+        "id": "pbc_drivers_01",
+        "fields": [
+            {
+                "id": "text_dfirst",
+                "name": "first_name",
+                "type": "text",
+                "required": true
+            },
+            {
+                "id": "text_dlast",
+                "name": "last_name",
+                "type": "text",
+                "required": true
+            },
+            {
+                "id": "date_dob",
+                "name": "dob",
+                "type": "date",
+                "required": false
+            },
+            {
+                "id": "text_dphone",
+                "name": "phone",
+                "type": "text",
+                "required": true
+            },
+            {
+                "id": "date_employment",
+                "name": "employment_start_date",
+                "type": "date",
+                "required": false
+            },
+            {
+                "id": "num_leave",
+                "name": "leave_days",
+                "type": "number",
+                "required": false
+            },
+            {
+                "id": "json_emergency",
+                "name": "emergency_contact",
+                "type": "json",
+                "required": false
+            },
+            {
+                "id": "text_dstatus",
+                "name": "status",
+                "type": "text",
+                "required": false
+            }
+        ],
+        "listRule": "",
+        "viewRule": "",
+        "createRule": "",
+        "updateRule": "",
+        "deleteRule": null,
+        "system": false
+    },
+    {
+        "name": "vehicles",
+        "type": "base",
+        "id": "pbc_vehicles_01",
+        "fields": [
+            {
+                "id": "text_vmake",
+                "name": "make",
+                "type": "text",
+                "required": true
+            },
+            {
+                "id": "text_vmodel",
+                "name": "model",
+                "type": "text",
+                "required": true
+            },
+            {
+                "id": "num_vyear",
+                "name": "year",
+                "type": "number",
+                "required": false
+            },
+            {
+                "id": "text_vreg",
+                "name": "registration",
+                "type": "text",
+                "required": true
+            },
+            {
+                "id": "text_vvin",
+                "name": "vin",
+                "type": "text",
+                "required": false
+            },
+            {
+                "id": "num_vodo",
+                "name": "odometer",
+                "type": "number",
+                "required": false
+            },
+            {
+                "id": "date_vservice",
+                "name": "last_service",
+                "type": "date",
+                "required": false
+            },
+            {
+                "id": "json_vhistory",
+                "name": "service_history",
+                "type": "json",
+                "required": false
+            },
+            {
+                "id": "date_vrenewal",
+                "name": "license_renewal",
+                "type": "date",
+                "required": false
+            },
+            {
+                "id": "date_vpurchase",
+                "name": "purchase_date",
+                "type": "date",
+                "required": false
+            },
+            {
+                "id": "date_vsold",
+                "name": "sold_date",
+                "type": "date",
+                "required": false
+            },
+            {
+                "id": "num_vpprice",
+                "name": "purchase_price",
+                "type": "number",
+                "required": false
+            },
+            {
+                "id": "num_vsprice",
+                "name": "selling_price",
+                "type": "number",
+                "required": false
+            },
+            {
+                "id": "rel_vdriver",
+                "name": "driver_id",
+                "type": "relation",
+                "collectionId": "pbc_drivers_01",
+                "maxSelect": 1,
+                "cascadeDelete": false
+            },
+            {
+                "id": "num_vpodo",
+                "name": "purchase_odo",
+                "type": "number",
+                "required": false
+            },
+            {
+                "id": "num_vsodo",
+                "name": "sold_odo",
+                "type": "number",
+                "required": false
+            },
+            {
+                "id": "num_vrodo",
+                "name": "renewal_odo",
+                "type": "number",
+                "required": false
+            },
+            {
+                "id": "text_vstatus",
+                "name": "status",
+                "type": "text",
+                "required": false
+            }
+        ],
+        "listRule": "",
+        "viewRule": "",
+        "createRule": "",
+        "updateRule": "",
+        "deleteRule": null,
+        "system": false
+    },
+    {
+        "name": "vehicle_expenses",
+        "type": "base",
+        "id": "pbc_expenses_01",
+        "fields": [
+            {
+                "id": "rel_ve_veh",
+                "name": "vehicle_id",
+                "type": "relation",
+                "collectionId": "pbc_vehicles_01",
+                "maxSelect": 1,
+                "cascadeDelete": true
+            },
+            {
+                "id": "text_ve_type",
+                "name": "type",
+                "type": "text",
+                "required": true
+            },
+            {
+                "id": "date_ve_date",
+                "name": "date",
+                "type": "date",
+                "required": true
+            },
+            {
+                "id": "num_ve_amt",
+                "name": "amount",
+                "type": "number",
+                "required": true
+            },
+            {
+                "id": "num_ve_odo",
+                "name": "odometer_at_expense",
+                "type": "number",
+                "required": false
+            },
+            {
+                "id": "text_ve_desc",
+                "name": "description",
+                "type": "text",
+                "required": false
+            },
+            {
+                "id": "text_ve_ref",
+                "name": "invoice_ref",
+                "type": "text",
+                "required": false
+            }
+        ],
+        "listRule": "",
+        "viewRule": "",
+        "createRule": "",
+        "updateRule": "",
+        "deleteRule": null,
+        "system": false
+    }
+]

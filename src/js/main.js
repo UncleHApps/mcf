@@ -1,6 +1,7 @@
 import '../css/input.css';
 import Alpine from 'alpinejs';
 import focus from '@alpinejs/focus';
+import PocketBase from 'pocketbase';
 window.Alpine = Alpine;
 Alpine.plugin(focus);
 
@@ -32,24 +33,190 @@ const countries = [
     { name: "United Arab Emirates", dial_code: "+971", code: "AE", flag: "🇦🇪" }, { name: "United Kingdom", dial_code: "+44", code: "GB", flag: "🇬🇧" }, { name: "United States", dial_code: "+1", code: "US", flag: "🇺🇸" }
 ];
 
+// --- POCKETBASE COMMAND CENTER INTEGRATION ---
+const pb = new PocketBase(import.meta.env.VITE_API_URL || 'http://localhost:80');
+
+const submitToCommandCenter = async (data) => {
+    try {
+        // 1. Sanitize and Find/Update Contact
+        let contact;
+        const email = (data.email || data.recipient_email || data.contact_email || '').trim().toLowerCase();
+        const name = (data.name || data.recipient_name || data.initial_name || '').trim();
+        const pbContactId = data.pb_contact_id;
+
+        if (!email) {
+            console.warn("No email provided, skipping Command Center sync.");
+            return {};
+        }
+
+        // Strategy A: If we have an ID, update directly
+        if (pbContactId) {
+            try {
+                const contactUpdate = {};
+                if (name) contactUpdate.name = name;
+                if (data.full_cell || data.cell_local_number) {
+                    contactUpdate.phone = data.full_cell || `${data.cell_country_code || ''}${data.cell_local_number}`;
+                }
+                if (data.company_name) contactUpdate.company = data.company_name;
+                contact = await pb.collection('contacts').update(pbContactId, contactUpdate);
+                console.log("Contact updated via ID:", contact.id);
+            } catch (e) {
+                console.warn("ID-based contact update failed, falling back to search:", e.message);
+                if (e.status === 404) {
+                    alert(`Sync Warning: Contact ID ${pbContactId} not found. Creating new contact.`);
+                }
+            }
+        }
+
+        // Strategy B: Search by email if Strategy A failed or skipped
+        if (!contact) {
+            try {
+                console.log(`Searching for existing contact with email: ${email}`);
+                contact = await pb.collection('contacts').getFirstListItem(`email="${email}"`);
+                console.log("Contact found via search:", contact.id);
+
+                // Update contact if we have fresh details
+                const contactUpdate = {};
+                if (name && contact.name === 'Unknown') contactUpdate.name = name;
+                if (data.full_cell || data.cell_local_number) {
+                    contactUpdate.phone = data.full_cell || `${data.cell_country_code || ''}${data.cell_local_number}`;
+                }
+                if (data.company_name) contactUpdate.company = data.company_name;
+
+                if (Object.keys(contactUpdate).length > 0) {
+                    contact = await pb.collection('contacts').update(contact.id, contactUpdate);
+                }
+            } catch (e) {
+                console.warn("Contact search failed or not found:", e.message);
+                // Strategy C: Create new
+                console.log("Creating new contact...");
+                contact = await pb.collection('contacts').create({
+                    name: name || 'Unknown',
+                    email: email,
+                    phone: data.full_cell || (data.cell_country_code ? `${data.cell_country_code}${data.cell_local_number}` : ''),
+                    company: data.company_name || '',
+                    type: 'Client'
+                });
+            }
+        }
+
+        // 2. Prepare Quote Data
+        const quotePayload = {
+            quote_ref: data.quote_id,
+            contact_id: contact.id,
+            destination: data.initial_country || data.country || '',
+            status: data.status || 'New',
+            submission_phase: data.submission_phase || 'Lead',
+            phase1_at: data.phase1_at || null,
+            phase2_at: data.phase2_at || null,
+            sars_docs: data.sars_documentation_service === 'Yes',
+            notification_preference: data.notification_preference || 'Email Only',
+            cargo_details: {
+                description: data.product_description || '',
+                hazchem: data.is_hazardous || data.is_hazchem || 'No'
+            },
+            route_details: {
+                pickup: data.collection_address || '',
+                drops: data.delivery_addresses || [],
+                required_date: data.delivery_deadline_date || data.delivery_date || '',
+                is_multipoint: data.is_multipoint === 'Multipoint'
+            }
+        };
+
+        const pbQuoteId = data.pb_quote_id;
+        let quote;
+
+        // Strategy A: If we have ID, update directly
+        if (pbQuoteId) {
+            try {
+                quote = await pb.collection('quotes').update(pbQuoteId, quotePayload);
+                console.log("Quote updated via ID:", quote.id);
+            } catch (e) {
+                console.warn("ID-based quote update failed, falling back to search:", e.message);
+            }
+        }
+
+        // Strategy B: Search by quote_ref
+        if (!quote) {
+            try {
+                console.log(`Searching for existing quote with ref: ${data.quote_id}`);
+                const existingQuote = await pb.collection('quotes').getFirstListItem(`quote_ref="${data.quote_id}"`);
+                console.log("Existing quote found via search:", existingQuote.id);
+
+                // Merge logic - ENSURE NO OVERWRITE OF GOOD DATA
+                const mergedPayload = { ...existingQuote };
+                if (quotePayload.destination) mergedPayload.destination = quotePayload.destination;
+
+                // Only merge cargo/route if the new data is NOT empty
+                if (quotePayload.cargo_details.description) mergedPayload.cargo_details.description = quotePayload.cargo_details.description;
+                if (quotePayload.cargo_details.hazchem !== 'No') mergedPayload.cargo_details.hazchem = quotePayload.cargo_details.hazchem;
+
+                if (quotePayload.route_details.pickup) mergedPayload.route_details.pickup = quotePayload.route_details.pickup;
+                if (quotePayload.route_details.drops && quotePayload.route_details.drops.length > 0) {
+                    if (quotePayload.route_details.drops[0] !== '') {
+                        mergedPayload.route_details.drops = quotePayload.route_details.drops;
+                    }
+                }
+                if (quotePayload.route_details.required_date) mergedPayload.route_details.required_date = quotePayload.route_details.required_date;
+
+                quote = await pb.collection('quotes').update(existingQuote.id, {
+                    destination: mergedPayload.destination,
+                    cargo_details: mergedPayload.cargo_details,
+                    route_details: mergedPayload.route_details,
+                    status: 'New'
+                });
+                console.log("Successfully merged/updated quote via search.");
+            } catch (e) {
+                console.warn("Quote search failed or not found:", e.message);
+                // Strategy C: Create new
+                console.log("Creating new quote...");
+                try {
+                    quote = await pb.collection('quotes').create(quotePayload);
+                    console.log("Successfully created new quote in Command Center.");
+                } catch (createError) {
+                    console.error("Quote creation failed:", createError);
+                    alert(`Quote Sync Failed: ${createError.message}\nCheck 'Unique' constraints or API Rules.`);
+                }
+            }
+        }
+
+        return { contactId: contact.id, quoteId: quote.id };
+    } catch (error) {
+        console.error("Command Center Sync Error:", error);
+        alert(`Command Center Error: ${error.message}`);
+        return {};
+    }
+};
+
+
 // --- HELPER FUNCTION FOR REFINEMENT PAGE ---
 const getInitialQuoteData = () => {
     const urlParams = new URLSearchParams(window.location.search);
+
+    // Check for shared/encoded state first (Resume Link)
     const sharedData = urlParams.get('data');
     if (sharedData) {
         try {
             const decodedState = JSON.parse(atob(sharedData));
-            if (decodedState.quoteData) { return { quoteData: decodedState.quoteData, isSharedLink: true }; }
+            if (decodedState.quoteData) {
+                return { quoteData: decodedState.quoteData, isSharedLink: true };
+            }
         } catch (e) { console.error("Could not parse shared data.", e); }
     }
-    const countryParam = urlParams.get('country');
+
+    // Otherwise, prefill from URL parameters (ID Affinity Flow)
+    const countryParam = urlParams.get('country') || urlParams.get('initial_country');
     const initialQuoteData = {
-        name: urlParams.get('name') || '', email: urlParams.get('email') || '',
+        name: urlParams.get('name') || urlParams.get('initial_name') || '',
+        email: urlParams.get('email') || urlParams.get('initial_email') || urlParams.get('contact_email') || '',
         initial_country: countryParam ? countryParam.charAt(0).toUpperCase() + countryParam.slice(1) : '',
-        delivery_deadline_date: urlParams.get('delivery_date') || '',
-        is_hazardous: urlParams.get('is_hazchem')?.toLowerCase() === 'true' ? 'Yes' : 'No',
+        delivery_deadline_date: urlParams.get('delivery_date') || urlParams.get('delivery_deadline_date') || '',
+        is_hazardous: (urlParams.get('is_hazchem') || urlParams.get('is_hazardous'))?.toLowerCase() === 'true' || (urlParams.get('is_hazchem') || urlParams.get('is_hazardous')) === 'Yes' ? 'Yes' : 'No',
         quote_id: urlParams.get('quote_id') || '',
-        quote_reference_name: '', is_multipoint: 'Single Stop',
+        pb_contact_id: urlParams.get('pbc_id') || '',
+        pb_quote_id: urlParams.get('pbq_id') || '',
+        quote_reference_name: '',
+        is_multipoint: urlParams.get('is_multipoint') || 'Single Stop',
     };
     return { quoteData: initialQuoteData, isSharedLink: false };
 };
@@ -70,7 +237,8 @@ document.addEventListener('alpine:init', () => {
             name: '', email: '', company_name: '', product_description: '', initial_country: '', delivery_deadline_date: '', is_hazardous: '',
             is_multipoint: 'Single Stop', collection_address: '', delivery_addresses: [''],
             cell_country_code: '+27', cell_local_number: '',
-            notification_preference: 'Email Only', quote_id: '', quote_reference_name: ''
+            notification_preference: 'Email Only', quote_id: '', quote_reference_name: '',
+            pb_contact_id: '', pb_quote_id: ''
         }
     });
 
@@ -89,16 +257,50 @@ document.addEventListener('alpine:init', () => {
             const webhookUrl = import.meta.env.VITE_MAKE_WEBHOOK_URL;
             if (!webhookUrl) { console.error("Webhook URL is not configured."); alert("Submission endpoint is not configured."); this.isLoading = false; return; }
             const welcomePayload = {
-                action: 'send_welcome_email', submission_timestamp: new Date().toISOString(),
-                recipient_email: formParams.get('email'), recipient_name: formParams.get('name'), quote_id: quoteId,
-                resume_url: new URL(this.continueUrl, window.location.origin).href, country: formParams.get('country'),
-                is_hazchem: formData.has('is_hazchem') ? 'Yes' : 'No', delivery_date: formParams.get('delivery_date')
+                action: 'send_welcome_email',
+                submission_timestamp: new Date().toISOString(),
+                submission_phase: 'Lead',
+                phase1_at: new Date().toISOString(),
+                recipient_email: formParams.get('email'),
+                recipient_name: formParams.get('name'),
+                quote_id: quoteId,
+                resume_url: new URL(this.continueUrl, window.location.origin).href,
+                country: formParams.get('country'),
+                is_hazchem: formData.has('is_hazchem') ? 'Yes' : 'No',
+                delivery_date: formParams.get('delivery_date')
             };
             try {
                 const response = await fetch(webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(welcomePayload) });
                 if (!response.ok) { console.error('Webhook call failed, but proceeding with UI change.'); }
+
+                // --- COMMAND CENTER SYNC ---
+                const pbResult = await submitToCommandCenter(welcomePayload);
+
+                // Binding IDs to global state immediately to prevent race conditions
+                if (pbResult.contactId) Alpine.store('quoteForm').quoteData.pb_contact_id = pbResult.contactId;
+                if (pbResult.quoteId) Alpine.store('quoteForm').quoteData.pb_quote_id = pbResult.quoteId;
+
+                // Finalize the continue URL with all params + PB IDs
+                const syncParams = new URLSearchParams(formParams);
+                if (pbResult.contactId) syncParams.append('pbc_id', pbResult.contactId);
+                if (pbResult.quoteId) syncParams.append('pbq_id', pbResult.quoteId);
+                this.continueUrl = `/quote-refinement.html?${syncParams.toString()}`;
+
                 this.isLoading = false; this.isSuccess = true;
-            } catch (error) { console.error('Fetch error:', error); this.isLoading = false; this.isSuccess = true; }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                // Still try to sync to local command center even if webhook fails
+                const pbResult = await submitToCommandCenter(welcomePayload);
+                if (pbResult.contactId) Alpine.store('quoteForm').quoteData.pb_contact_id = pbResult.contactId;
+                if (pbResult.quoteId) Alpine.store('quoteForm').quoteData.pb_quote_id = pbResult.quoteId;
+
+                const syncParams = new URLSearchParams(formParams);
+                if (pbResult.contactId) syncParams.append('pbc_id', pbResult.contactId);
+                if (pbResult.quoteId) syncParams.append('pbq_id', pbResult.quoteId);
+                this.continueUrl = `/quote-refinement.html?${syncParams.toString()}`;
+
+                this.isLoading = false; this.isSuccess = true;
+            }
         },
         continueToQuote() { if (this.continueUrl) { window.location.href = this.continueUrl; } }
     });
@@ -257,7 +459,8 @@ document.addEventListener('alpine:init', () => {
                 contact_email: data.email,
                 full_cell: data.cell_local_number ? `${data.cell_country_code}${data.cell_local_number.replace(/\s/g, '')}` : '',
                 notification_preference: data.notification_preference, submitted_by_collaborator: this.isCollaborator,
-                original_sender: this.isCollaborator ? `${this.originalSenderName} <${this.originalSenderEmail}>` : 'N/A'
+                original_sender: this.isCollaborator ? `${this.originalSenderName} <${this.originalSenderEmail}>` : 'N/A',
+                pb_contact_id: data.pb_contact_id, pb_quote_id: data.pb_quote_id
             };
         },
 
@@ -265,15 +468,32 @@ document.addEventListener('alpine:init', () => {
             const webhookUrl = import.meta.env.VITE_MAKE_WEBHOOK_URL;
             if (!webhookUrl) { console.error("Webhook URL is not configured."); alert("Endpoint is not configured."); return false; }
             try {
+                // --- COMMAND CENTER SYNC ---
+                const pbResult = await submitToCommandCenter(payload);
+                if (pbResult.contactId) this.$store.quoteForm.quoteData.pb_contact_id = pbResult.contactId;
+                if (pbResult.quoteId) this.$store.quoteForm.quoteData.pb_quote_id = pbResult.quoteId;
+
                 const response = await fetch(webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
                 if (!response.ok) { console.error("Webhook call failed:", response.statusText); alert("There was an error saving your progress. Please try again."); return false; }
                 return true;
-            } catch (error) { console.error("Fetch error:", error); alert("A network error occurred. Please check your connection and try again."); return false; }
+            } catch (error) {
+                console.error("Fetch error:", error);
+                alert("A network error occurred. Please check your connection and try again.");
+                return false;
+            }
         },
 
         async saveForLater() {
             this.isSaving = true;
-            const stateToShare = { quoteData: this.$store.quoteForm.quoteData, isCollaborator: this.isCollaborator, originalSenderEmail: this.originalSenderEmail, originalSenderName: this.originalSenderName };
+            // Include PB IDs in the saved state for perfect re-binding
+            const stateToShare = {
+                quoteData: this.$store.quoteForm.quoteData,
+                isCollaborator: this.isCollaborator,
+                originalSenderEmail: this.originalSenderEmail,
+                originalSenderName: this.originalSenderName,
+                pb_contact_id: this.$store.quoteForm.quoteData.pb_contact_id,
+                pb_quote_id: this.$store.quoteForm.quoteData.pb_quote_id
+            };
             const resumeUrl = `${new URL('/quote-refinement.html', window.location.origin).href}?data=${btoa(JSON.stringify(stateToShare))}`;
             const payload = { action: 'save_for_later', resume_url: resumeUrl, ...this._createFullPayload() };
             if (await this._sendWebhook(payload)) { this.showSaveSuccessModal = true; }
@@ -282,7 +502,14 @@ document.addEventListener('alpine:init', () => {
 
         async sendInviteAndSave() {
             this.isSendingInvite = true;
-            const stateToShare = { quoteData: this.$store.quoteForm.quoteData, isCollaborator: this.isCollaborator, originalSenderEmail: this.originalSenderEmail, originalSenderName: this.originalSenderName };
+            const stateToShare = {
+                quoteData: this.$store.quoteForm.quoteData,
+                isCollaborator: this.isCollaborator,
+                originalSenderEmail: this.originalSenderEmail,
+                originalSenderName: this.originalSenderName,
+                pb_contact_id: this.$store.quoteForm.quoteData.pb_contact_id,
+                pb_quote_id: this.$store.quoteForm.quoteData.pb_quote_id
+            };
             const resumeUrl = `${new URL('/quote-refinement.html', window.location.origin).href}?data=${btoa(JSON.stringify(stateToShare))}`;
             const payload = { action: 'send_collaboration_invite', resume_url: resumeUrl, requester_name: this.$store.quoteForm.quoteData.name || 'A colleague', collaborator_email: this.collaboratorEmail, ...this._createFullPayload() };
             if (await this._sendWebhook(payload)) { this.showCollaborationModal = false; this.showSaveSuccessModal = true; }
@@ -299,6 +526,8 @@ document.addEventListener('alpine:init', () => {
             const finalPayload = {
                 action: 'submit_completed_quote',
                 completion_timestamp: new Date().toISOString(),
+                submission_phase: 'Request',
+                phase2_at: new Date().toISOString(),
                 resume_url: resumeUrl,
                 ...this._createFullPayload(),
                 sars_documentation_service: wantsSarsDocs ? 'Yes' : 'No' // Add the new data point
