@@ -31,17 +31,17 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: 'src/index.html',
-        quote: 'src/quote-refinement.html',
-        agricultural: 'src/agricultural-farming-logistics.html',
-        construction: 'src/construction-manufacturing-freight.html',
-        malawi: 'src/cross-border-freight-malawi.html',
-        zambia: 'src/cross-border-freight-zambia.html',
-        zimbabwe: 'src/cross-border-freight-zimbabwe.html',
-        hazchem: 'src/dedicated-hazchem-freight.html',
-        general: 'src/general-cargo-ftl-freight.html',
-        mining: 'src/mining-industrial-chemical-transport.html',
-        import_export: 'src/import-export.html'
+        main: 'index.html',
+        quote: 'quote-refinement.html',
+        agricultural: 'agricultural-farming-logistics.html',
+        construction: 'construction-manufacturing-freight.html',
+        malawi: 'cross-border-freight-malawi.html',
+        zambia: 'cross-border-freight-zambia.html',
+        zimbabwe: 'cross-border-freight-zimbabwe.html',
+        hazchem: 'dedicated-hazchem-freight.html',
+        general: 'general-cargo-ftl-freight.html',
+        mining: 'mining-industrial-chemical-transport.html',
+        import_export: 'import-export.html'
       }
     }
   }
