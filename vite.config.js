@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { resolve } from 'path';
 
 // This is the final, definitive configuration for a custom domain deployment.
@@ -14,6 +15,11 @@ export default defineConfig({
   plugins: [
     handlebars({
       partialDirectory: resolve(__dirname, 'src/components'),
+    }),
+    ViteImageOptimizer({
+      png:  { quality: 80 },
+      jpeg: { quality: 75 },
+      webp: { quality: 75 },
     }),
   ],
 

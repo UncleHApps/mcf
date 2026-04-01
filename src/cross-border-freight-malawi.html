@@ -11,15 +11,10 @@
     <meta name="description"
         content="Dedicated FTL transport to Lilongwe, Blantyre & beyond. We are specialists in the Tete Corridor route, ensuring on-time delivery for agri & project cargo.">
 
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fonts & Icons (Self-Hosted for Performance) -->
+    <link rel="preload" href="/fonts/montserrat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/open-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/fonts/fontawesome.min.css">
 
     <!-- App Styles & Scripts -->
     <link rel="stylesheet" href="/css/input.css">
@@ -83,9 +78,8 @@
     <main>
 
         <!-- 1. HERO SECTION -->
-        <section class="bg-cover bg-center bg-malawi-hero">
-            <div class="bg-primary-blue bg-opacity-80 py-24 text-white">
-                <div class="container mx-auto px-6 sm:px-8">
+        <section class="bg-primary-blue py-24 text-white">
+            <div class="container mx-auto px-6 sm:px-8">
                     <div class="max-w-4xl">
                         <p class="mb-2 font-semibold text-gray-300"><a href="/index.html"
                                 class="hover:text-secondary-orange transition-colors duration-200">Home</a> / <span
@@ -175,7 +169,7 @@
         <section class="py-12 bg-white">
             <div class="container max-w-7xl mx-auto px-6 sm:px-8">
                 <div class="relative h-[300px] md:h-[550px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 group">
-                    <img src="/images/malawi-cross-border-freight.webp" alt="Premium FTL freight to Malawi" 
+                    <img src="/images/malawi-cross-border-freight.webp" alt="Premium FTL freight to Malawi" width="1400" height="600"
                          class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
@@ -239,7 +233,7 @@
                         class="group bg-light-grey rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-200">
                         <!-- Image/Icon Area -->
                         <div class="h-72 overflow-hidden relative">
-                            <img src="/images/Flatbed-Config-A.webp" alt="Flatbed Superlink 20ft and 40ft combination"
+                            <img src="/images/Flatbed-Config-A.webp" alt="Flatbed Superlink 20ft and 40ft combination" width="600" height="400"
                                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                             <div
                                 class="absolute top-4 left-4 bg-primary-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
@@ -296,7 +290,7 @@
                         class="group bg-light-grey rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-200">
                         <!-- Image/Icon Area -->
                         <div class="h-72 overflow-hidden relative">
-                            <img src="/images/Curtain_side-Config-B.webp" alt="Tautliner Curtain-Side Superlink"
+                            <img src="/images/Curtain_side-Config-B.webp" alt="Tautliner Curtain-Side Superlink" width="600" height="400"
                                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                             <div
                                 class="absolute top-4 left-4 bg-secondary-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
@@ -428,7 +422,7 @@
                     <!-- Image Column -->
                     <div class="text-center">
                         <img src="/images/Beitbridge-freight-customs.webp"
-                            alt="A depiction of efficient customs clearance for cross-border freight"
+                            alt="A depiction of efficient customs clearance for cross-border freight" width="800" height="533"
                             class="rounded-lg shadow-xl w-full h-auto" loading="lazy">
                     </div>
                 </div>
@@ -558,7 +552,7 @@
                             <div class="absolute -inset-4 bg-primary-blue/5 rounded-[2.5rem] blur-2xl"></div>
                             
                             <div class="relative rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 h-[600px]">
-                                <img src="/images/cross-border-freight-faq.webp" alt="Mas Freight Cross-Border Trucks" 
+                                <img src="/images/cross-border-freight-faq.webp" alt="Mas Freight Cross-Border Trucks" width="1400" height="600"
                                      class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110">
                                 
                                 <!-- Floating Badge -->

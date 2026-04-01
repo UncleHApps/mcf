@@ -1,8 +1,79 @@
+/* === SELF-HOSTED FONTS (eliminates critical request chains) === */
+
+/* --- Montserrat (Headings) --- */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/montserrat-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/montserrat-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/montserrat-latin-700-normal.woff2') format('woff2');
+}
+
+/* --- Open Sans (Body) --- */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/open-sans-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/open-sans-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/open-sans-latin-700-normal.woff2') format('woff2');
+}
+
+/* --- FontAwesome 6.4.0 (Self-hosted core) --- */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/fa-solid-900.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/fa-regular-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/fa-brands-400.woff2') format('woff2');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* === v38.0 DEFINITIVE STYLESHEET === */
+/* === v39.0 DEFINITIVE STYLESHEET (Lighthouse Optimized) === */
 
 
 /* --- FLOATING LABEL & INPUT SYSTEM --- */
@@ -75,6 +146,16 @@
 .welcome-mat-container { @apply max-w-4xl mx-auto text-center; }
 .welcome-mat-headline { @apply font-sans text-3xl md:text-4xl font-bold text-primary-blue; }
 .welcome-mat-subheadline { @apply mt-4 text-lg text-gray-600 max-w-3xl mx-auto; }
+
+
+/* --- LIGHTHOUSE ACCESSIBILITY OVERRIDES (Contrast Fixes) --- */
+/* We darken these specifically for text use to pass 4.5:1 contrast ratios */
+.text-gray-400 { color: #4B5563 !important; } /* gray-400 -> gray-600 */
+.text-gray-500 { color: #374151 !important; } /* gray-500 -> gray-700 */
+.text-secondary-orange { color: #C2410C !important; } /* brand orange -> darkened orange for WCAG AA */
+
+/* Ensure hover states also pass */
+.hover\:text-secondary-orange:hover { color: #9A3412 !important; } 
 
 
 /* --- RESPONSIVE PROGRESS BAR --- */
