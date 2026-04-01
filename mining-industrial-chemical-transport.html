@@ -11,15 +11,10 @@
     <meta name="description"
         content="Keep your mine productive. We are hazchem specialists for cross-border FTL transport of cyanide, xanthates, & critical reagents to Zim & Zam.">
 
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fonts & Icons (Self-Hosted for Performance) -->
+    <link rel="preload" href="/fonts/montserrat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/open-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/fonts/fontawesome.min.css">
 
     <!-- App Styles & Scripts -->
 
@@ -75,8 +70,8 @@
 }
 </script>
 
-  <script type="module" crossorigin src="/assets/main-BCRLqCjK.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-DTGusaVE.css">
+  <script type="module" crossorigin src="/assets/main-BIcC8X5j.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-BP1eApFs.css">
 </head>
 
 <body class="font-body text-dark-grey antialiased" x-data>
@@ -317,9 +312,8 @@
     </header>    <main>
 
         <!-- 1. HERO SECTION (Specific to Mining) -->
-        <section id="hero-mining" class="bg-cover bg-center bg-mining-hero">
-            <div class="bg-primary-blue bg-opacity-80 py-24 text-white">
-                <div class="container mx-auto px-6 sm:px-8">
+        <section id="hero-mining" class="bg-primary-blue py-24 text-white">
+            <div class="container mx-auto px-6 sm:px-8">
                     <div class="max-w-4xl">
                         <p class="mb-2 font-semibold text-gray-300"><a href="index.html"
                                 class="hover:text-secondary-orange transition-colors duration-200">Home</a> / <span
@@ -399,7 +393,7 @@
         <section class="py-12 bg-white">
             <div class="container max-w-7xl mx-auto px-6 sm:px-8">
                 <div class="relative h-[300px] md:h-[550px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 group">
-                    <img src="/images/mining-freight-service.webp" alt="Premium FTL mining equipment transport" 
+                    <img src="/images/mining-freight-service.webp" alt="Premium FTL mining equipment transport" width="1400" height="600"
                          class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
@@ -511,7 +505,7 @@
     </main>
 
     <!-- FOOTER (Reusable Component) -->
-    <footer id="contact" class="bg-primary-dark text-gray-400 py-16">
+    <footer id="contact" class="bg-primary-dark text-gray-300 py-16">
         <div class="container mx-auto px-6 sm:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 md:text-left">
                 <!-- Column 1: Brand -->
@@ -739,6 +733,7 @@
     
     <!-- STICKY CTA (Reusable Component) -->
     <button @click="$store.modal.open()"
+        aria-label="Get My Certainty Quote (Stage one of contact form)"
         class="fixed bottom-6 right-6 bg-secondary-orange text-white font-sans font-bold py-3 px-5 rounded-full shadow-lg hover:bg-orange-600 transition-all transform hover:scale-110 z-30 flex items-center gap-2">
         <i class="fas fa-comment-dots"></i><span class="hidden sm:inline">Get My Certainty Quote</span>
     </button></body>
