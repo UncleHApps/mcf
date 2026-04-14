@@ -70,8 +70,8 @@
 }
 </script>
 
-  <script type="module" crossorigin src="/assets/main-BIcC8X5j.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-BP1eApFs.css">
+  <script type="module" crossorigin src="/assets/main-qc8P1KcW.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-BYgJ3cbF.css">
 </head>
 
 <body class="font-body text-dark-grey antialiased" x-data>
@@ -248,6 +248,9 @@
                 <li><a href="contact.html"
                         class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">Contact</a>
                 </li>
+                <li><button @click="$store.survey.open()"
+                        class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">Take Survey</button>
+                </li>
                 <li class="hidden md:block"><button @click="$store.modal.open()"
                         class="bg-secondary-orange text-white font-sans font-bold py-2 px-5 rounded-md hover:bg-orange-600 transition-transform hover:scale-105">Get
                         My Certainty Quote</button></li>
@@ -303,6 +306,8 @@
                     <a href="contact.html" @click="mobileMenuOpen = false"
                         class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Contact
                         Us</a>
+                    <button @click="$store.survey.open(); mobileMenuOpen = false;"
+                        class="block w-full text-left px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Take the Survey</button>
                     <button @click="$store.modal.open(); mobileMenuOpen = false;"
                         class="w-full mt-2 bg-secondary-orange text-white font-sans font-bold py-3 px-5 rounded-md">Get My
                         Certainty Quote</button>
@@ -726,6 +731,76 @@
                             Close
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SURVEY MODAL (Interactive Feedback Component) -->
+    <div x-data="surveyForm" x-show="$store.survey.isOpen" x-trap.noscroll="$store.survey.isOpen" @keydown.escape.window="$store.survey.close()"
+        class="fixed inset-0 bg-primary-blue bg-opacity-75 z-50 flex items-center justify-center p-4" x-cloak>
+        <div @click.outside="$store.survey.close()" class="bg-white rounded-lg shadow-xl w-full max-w-2xl relative overflow-hidden"
+            x-show="$store.survey.isOpen" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-90">
+    
+            <!-- Progress Bar -->
+            <div class="h-2 w-full bg-gray-100 absolute top-0 left-0">
+                <div class="h-full bg-secondary-orange transition-all duration-500" :style="`width: ${progress}%`" x-show="!isSuccess"></div>
+            </div>
+    
+            <div class="p-6 md:p-10">
+                <button @click="$store.survey.close()" aria-label="Close modal"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-3xl leading-none">&times;</button>
+    
+                <!-- SURVEY QUESTIONS -->
+                <div x-show="!isSuccess">
+                    <div class="mb-6 flex justify-between items-end">
+                        <span class="text-sm font-bold text-secondary-orange uppercase tracking-wider" x-text="`Question ${step} of ${totalSteps}`"></span>
+                    </div>
+    
+                    <template x-for="q in questions" :key="q.id">
+                        <div x-show="step === q.id" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-x-10" x-transition:enter-end="opacity-100 translate-x-0">
+                            <h3 class="font-sans text-2xl md:text-3xl font-bold text-primary-blue mb-6" x-text="q.text"></h3>
+                            <div class="mt-4">
+                                <textarea x-model="responses[`q${q.id}`]" :placeholder="q.placeholder" 
+                                    class="w-full h-32 p-4 border-2 border-gray-200 rounded-lg focus:border-secondary-orange focus:ring-0 outline-none text-lg transition-colors"
+                                    @keydown.enter.prevent="nextStep()"></textarea>
+                            </div>
+                        </div>
+                    </template>
+    
+                    <div class="mt-10 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div class="flex gap-4 order-2 md:order-1">
+                            <button @click="prevStep()" x-show="step > 1" class="text-gray-500 font-bold hover:text-primary-blue transition-colors">
+                                <i class="fas fa-arrow-left mr-2"></i> Back
+                            </button>
+                        </div>
+                        <div class="flex gap-4 order-1 md:order-2 w-full md:w-auto">
+                            <button @click="skipStep()" class="flex-1 md:flex-none px-6 py-3 font-bold text-gray-400 hover:text-gray-600 transition-colors">
+                                Skip
+                            </button>
+                            <button @click="nextStep()" class="flex-1 md:flex-none bg-secondary-orange text-white font-sans font-bold py-3 px-8 rounded-md hover:bg-orange-600 transition-all min-w-[140px]" :disabled="isSubmitting">
+                                <span x-show="!isSubmitting" x-text="step === totalSteps ? 'Finish' : 'Next Question'"></span>
+                                <span x-show="isSubmitting" class="flex items-center gap-2">
+                                    <i class="fas fa-spinner fa-spin"></i> Saving...
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- SUCCESS SCREEN -->
+                <div x-show="isSuccess" class="text-center py-8" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check text-4xl text-green-500"></i>
+                    </div>
+                    <h3 class="font-sans text-3xl font-bold text-primary-blue mb-4">You're Awesome!</h3>
+                    <p class="text-xl text-gray-600 mb-8 max-w-md mx-auto">Thank you for helping us build a better Mas Freight. Your feedback is exactly what we need.</p>
+                    <button @click="$store.survey.close(); setTimeout(() => reset(), 500)" class="bg-primary-blue text-white font-sans font-bold py-4 px-10 rounded-md hover:bg-blue-900 transition-colors text-lg">
+                        Back to Website
+                    </button>
                 </div>
             </div>
         </div>
