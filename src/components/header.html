@@ -169,6 +169,9 @@
             <li><a href="contact.html"
                     class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">Contact</a>
             </li>
+            <li><button @click="$store.survey.open()"
+                    class="font-sans font-semibold text-primary-blue hover:text-secondary-orange transition-colors">Take Survey</button>
+            </li>
             <li class="hidden md:block"><button @click="$store.modal.open()"
                     class="bg-secondary-orange text-white font-sans font-bold py-2 px-5 rounded-md hover:bg-orange-600 transition-transform hover:scale-105">Get
                     My Certainty Quote</button></li>
@@ -224,6 +227,8 @@
                 <a href="contact.html" @click="mobileMenuOpen = false"
                     class="block px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Contact
                     Us</a>
+                <button @click="$store.survey.open(); mobileMenuOpen = false;"
+                    class="block w-full text-left px-4 py-2 font-semibold text-primary-blue rounded-md hover:bg-light-grey">Take the Survey</button>
                 <button @click="$store.modal.open(); mobileMenuOpen = false;"
                     class="w-full mt-2 bg-secondary-orange text-white font-sans font-bold py-3 px-5 rounded-md">Get My
                     Certainty Quote</button>

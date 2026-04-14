@@ -305,6 +305,56 @@ document.addEventListener('alpine:init', () => {
         continueToQuote() { if (this.continueUrl) { window.location.href = this.continueUrl; } }
     });
 
+    // --- NEW: SURVEY MODAL STORE ---
+    Alpine.store('survey', {
+        isOpen: false,
+        open() { this.isOpen = true; },
+        close() { this.isOpen = false; }
+    });
+
+    // --- NEW: SURVEY DATA HANDLER ---
+    Alpine.data('surveyForm', () => ({
+        step: 1,
+        totalSteps: 12,
+        isSubmitting: false,
+        isSuccess: false,
+        responses: {
+            q1: '', q2: '', q3: '', q4: '', q5: '', q6: '',
+            q7: '', q8: '', q9: '', q10: '', q11: '', q12: ''
+        },
+        questions: [
+            { id: 1, text: "What do you mostly ship with us?", placeholder: "e.g. Mining chemicals, food..." },
+            { id: 2, text: "How many times a month do you send a full truck across the border?", placeholder: "e.g. 5 times" },
+            { id: 3, text: "Where do your trucks go most often?", placeholder: "e.g. Harare, Lusaka..." },
+            { id: 4, text: "Before you found Mas Freight, what was your biggest problem with shipping across the border?", placeholder: "Tell us your biggest headache..." },
+            { id: 5, text: "Was there a specific time when another company messed up so badly that you decided to leave them? What happened?", placeholder: "The 'breaking point'..." },
+            { id: 6, text: "What is the most important thing to you: Being fast? Being cheap? Or always knowing where the truck is?", placeholder: "Your #1 priority..." },
+            { id: 7, text: "If a truck is late or your stuff gets broken, how does that hurt your business?", placeholder: "Does it cost money? Do you lose customers?" },
+            { id: 8, text: "We own our trucks. You can talk to us directly. Does that make your job easier? How?", placeholder: "The asset-owner advantage..." },
+            { id: 9, text: "What part of the paperwork or office work is the biggest pain for you?", placeholder: "The forms you hate the most..." },
+            { id: 10, text: "What is one thing you wish we told you more often while the truck is on the road?", placeholder: "e.g. A text every morning..." },
+            { id: 11, text: "If we closed our business tomorrow, what part of your job would become a big headache again?", placeholder: "The one thing you'd miss most..." },
+            { id: 12, text: "In your own words, what is it really like to work with us?", placeholder: "Your honest review..." }
+        ],
+        get progress() { return Math.round((this.step / this.totalSteps) * 100); },
+        nextStep() { if (this.step < this.totalSteps) { this.step++; } else { this.submitSurvey(); } },
+        prevStep() { if (this.step > 1) { this.step--; } },
+        skipStep() { this.nextStep(); },
+        async submitSurvey() {
+            this.isSubmitting = true;
+            // Simulate API call for demo
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            console.log('Survey submitted:', this.responses);
+            this.isSubmitting = false;
+            this.isSuccess = true;
+        },
+        reset() {
+            this.step = 1;
+            this.isSuccess = false;
+            this.responses = { q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: '', q11: '', q12: '' };
+        }
+    }));
+
     Alpine.data('datepicker', (dispatch, initialDate = '') => ({
         isOpen: false, selectedDate: initialDate, month: '', year: '', daysInMonth: [], blankDays: [],
         monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
